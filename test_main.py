@@ -31,3 +31,5 @@ def test_main_reaction_table():
     r_table.append(r2)
     assert len(r_table) == 2
     assert r_table[0].elem_proj == "Cr"
+
+def test_main_get

@@ -4,14 +4,12 @@ import json
 import csv
 import periodictable as pt
 
-# Making a GET request
-# r = requests.get('http://nrv.jinr.ru/nrv/webnrv/expdata/get_reaction.php?task=evaporation_residues&id=285&p=&n=&a=&channel=')
-
-# Parsing the HTML
-# soup = bs(r.content, 'html.parser')
-
-# s = soup.find('textarea', id_='ID_DATA_EVR')
-# content = soup.find_all('p')
+# TODO: (possibilities)
+# -plotting charts, nice interface to interact
+# -further data-mining, maybe some universalisation of the scraper
+# -calculations, predictions
+# -building proper database with easy development
+# -connecting to some LLM
 
 
 def get_reaction_data(id=1):
@@ -22,11 +20,8 @@ def get_reaction_data(id=1):
     response.encoding = "utf-8-sig"
     valid_data = response.json()
     print(f"relcode: {id}")
-    print(valid_data["data"])
+    # print(valid_data["data"])
     return valid_data
-
-
-# def create_reaction_object:
 
 
 class ExperimentalDataRow:
@@ -40,8 +35,6 @@ class Reaction:
     def __init__(self, json_source_data: dict):
         for key, value in json_source_data.items():
             if key != "data":
-                # self[key]
-                # self[key] = value
                 setattr(self, key, value)
             else:
                 self.data = []
