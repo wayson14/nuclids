@@ -78,7 +78,27 @@ class ReactionTable(list):
     def __init__(self, *args):
         super().__init__()
 
+    def combine_experimental_data_rows_with_ids(self) -> list:
+        buffer = []
+        for item in self[:]:
+            item_relcode = item.relcode
+            for data_row_dict in item.data:
+                buffer.append(item_relcode)
+                buffer += data_row_dict.values()
+        return buffer
+
+    def save_results_table_to_csv(self):
+        pass
+
 
 if __name__ == "__main__":
-    get_reaction_data()
-# http://nrv.jinr.ru/nrv/webnrv/expdata/get_reaction.php?task=evaporation_residues&id=285&p=&n=&a=&channel=
+    # get_reaction_data()
+    # EASY TESTING
+    sample_reaction_data = get_reaction_data(id=1)
+    r1 = Reaction(sample_reaction_data)
+    r2 = Reaction(sample_reaction_data)
+    r_table = ReactionTable()
+    r_table.append(r1)
+    r_table.append(r2)
+    to_csv = r_table.combine_experimental_data_rows_with_ids()
+    print(to_csv)
