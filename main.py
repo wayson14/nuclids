@@ -26,9 +26,16 @@ def get_reaction_data(id=1):
 # def create_reaction_object:
 
 
+class ExperimentalDataRow:
+    def __init__(self, reaction_id: int, json_experiment_data: dict):
+        for key, value in json_experiment_data.items():
+            setattr(self, key, value)
+        self.reaction_id = reaction_id
+
+
 class Reaction:
-    def __init__(self, json_data: dict):
-        for key, value in json_data.items():
+    def __init__(self, json_source_data: dict):
+        for key, value in json_source_data.items():
             if key != "data":
                 # self[key]
                 # self[key] = value
@@ -64,6 +71,11 @@ class ElasticScatteringReaction(Reaction):
 
 class FusionReaction(Reaction):
     def __init__(self):
+        super().__init__()
+
+
+class ReactionTable(list):
+    def __init__(self, *args):
         super().__init__()
 
 

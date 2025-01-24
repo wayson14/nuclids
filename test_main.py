@@ -1,5 +1,5 @@
 import pytest
-from main import get_reaction_data, Reaction
+from main import get_reaction_data, Reaction, ReactionTable
 
 sample_reaction_data = get_reaction_data(id=1)
 
@@ -21,3 +21,13 @@ def test_main_reaction_experimental_data_parser():
         "error_minus": 63,
         "channel": "1n",
     }
+
+
+def test_main_reaction_table():
+    r1 = Reaction(sample_reaction_data)
+    r2 = Reaction(sample_reaction_data)
+    r_table = ReactionTable()
+    r_table.append(r1)
+    r_table.append(r2)
+    assert len(r_table) == 2
+    assert r_table[0].elem_proj == "Cr"
