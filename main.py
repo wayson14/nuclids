@@ -1,6 +1,7 @@
 import requests
 from bs4 import BeautifulSoup as bs
 import json
+import csv
 
 # Making a GET request
 # r = requests.get('http://nrv.jinr.ru/nrv/webnrv/expdata/get_reaction.php?task=evaporation_residues&id=285&p=&n=&a=&channel=')
@@ -83,11 +84,34 @@ class ReactionTable(list):
         for item in self[:]:
             item_relcode = item.relcode
             for data_row_dict in item.data:
-                buffer.append(item_relcode)
-                buffer += data_row_dict.values()
+                row = [item_relcode]
+                row += data_row_dict.values()
+                buffer.append(row)
         return buffer
 
     def save_results_table_to_csv(self):
+        filename = "results.csv"
+        items = self.combine_experimental_data_rows_with_ids()
+        # keys = self[0].__dict__
+        try:
+            with open(filename, "w", newline="\n") as f:
+                writer = csv.writer(f)
+                writer.writerow(
+                    [
+                        "relcode",
+                        "energy",
+                        "cross_section",
+                        "error_plus",
+                        "error_minus",
+                        "channel",
+                    ]
+                )
+                for item in items:
+                    writer.writerow(item)
+        except BaseException as e:
+            print(f"Exception:{e}", filename)
+        else:
+            print("Data has been loaded properly!")
         pass
 
 
@@ -102,3 +126,4 @@ if __name__ == "__main__":
     r_table.append(r2)
     to_csv = r_table.combine_experimental_data_rows_with_ids()
     print(to_csv)
+    r_table.save_results_table_to_csv()
