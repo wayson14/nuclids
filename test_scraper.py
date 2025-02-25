@@ -1,10 +1,10 @@
 import pytest
-from main import get_reaction_data, Reaction, ReactionTable
+from scraper import get_reaction_data, Reaction, ReactionTable
 
 sample_reaction_data = get_reaction_data(id=1)
 
 
-def test_main_reaction_creation():
+def test_scraper_reaction_creation():
     # print(sample_reaction_data)
     r1 = Reaction(sample_reaction_data)
     assert r1.elem_proj == "Cr"
@@ -24,7 +24,7 @@ def test_main_reaction_creation():
 #     }
 
 
-def test_main_reaction_table():
+def test_scraper_reaction_table():
     r1 = Reaction(sample_reaction_data)
     r2 = Reaction(sample_reaction_data)
     r_table = ReactionTable()
@@ -34,12 +34,12 @@ def test_main_reaction_table():
     assert r_table[0].elem_proj == "Cr"
 
 
-def test_main_sigma_normalisation():
+def test_scraper_sigma_normalisation():
     r1 = Reaction(sample_reaction_data)
     assert r1.do_sigma_normalisation(1000, "mcb") == 1
 
 
-def test_main_E_normalisation():
+def test_scraper_E_normalisation():
     pass
 
 

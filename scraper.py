@@ -143,7 +143,14 @@ class ReactionTable(list):
         for item in self[:]:
             # item_relcode = item.relcode
             for data_row_dict in item.data:
-                row = [item.relcode, item.get_shortened_reaction_label()]
+                row = [
+                    item.relcode,
+                    item.get_shortened_reaction_label(),
+                    item.a_proj,
+                    item.z_proj,
+                    item.a_targ,
+                    item.z_targ,
+                ]
                 row += data_row_dict.values()
                 buffer.append(row)
         return buffer
@@ -158,6 +165,10 @@ class ReactionTable(list):
                     [
                         "relcode",
                         "shortened_label",
+                        "a_proj",  # added
+                        "z_proj",  # added
+                        "a_targ",  # added
+                        "z_targ",  # added
                         "energy",
                         "cross_section",
                         "error_plus",
@@ -201,5 +212,5 @@ if __name__ == "__main__":
     # r_table.save_results_table_to_csv()
 
     # INTEGRATION TESTING
-    # scrape_all_evaporation_data_to_csv(1, 305)
-    scrape_all_evaporation_data_to_csv(1, 2)
+    scrape_all_evaporation_data_to_csv(1, 305)
+    # scrape_all_evaporation_data_to_csv(1, 2)
