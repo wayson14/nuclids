@@ -35,7 +35,7 @@ class Reaction:
     def __init__(self, json_source_data: dict):
         normalise_sigma = False
         normalise_E = False
-        self.original_sigma_unit = ""
+        self.original_sigma_unit = "mb"
         for key, value in json_source_data.items():
             if key != "data":
                 if key == "e_sys" and value == "cm":
@@ -46,6 +46,7 @@ class Reaction:
                 if key == "sigma_units" and value != "mb":
                     # checks the sigma unit, and if it is not mb, signals need of conversion
                     setattr(self, key, f"converted from {value} to mb")
+                    self.original_sigma_unit = value
                     normalise_sigma = True
                     continue
 
@@ -77,7 +78,7 @@ class Reaction:
             "pb": 1000000000,
             "fb": 1000000000000,
         }
-        return sigma_value * sigma_conversion_dict[original_sigma_unit]
+        return sigma_value / sigma_conversion_dict[original_sigma_unit]
 
     def parse_experimental_data(self, value, normalise_sigma=False, normalise_E=False):
         rows = value.split("\n")
@@ -86,7 +87,9 @@ class Reaction:
             self.data.append(
                 {
                     "energy": (
-                        self.E_cm_to_E_lab(float(buffer[0]), self.a_targ, self.a_proj)
+                        self.E_cm_to_E_lab(
+                            float(buffer[0]), int(self.a_targ), int(self.a_proj)
+                        )
                         if normalise_E
                         else float(buffer[0])
                     ),
