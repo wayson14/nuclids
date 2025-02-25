@@ -21,8 +21,12 @@ class Experiment:
         self.a_targ: int = data_dict["a_targ"]
         self.z_targ: int = data_dict["z_targ"]
         self.energy_data_series = [data_dict["energy"]]
-        self.channel = self.determine_max_channel(data_dict["channel"])
 
+        channel_vector = self.determine_max_channel(data_dict["channel"])
+
+        self.channel_n = channel_vector[0]
+        self.channel_p = channel_vector[1]
+        self.channel_a = channel_vector[2]
         pass
 
     def parse_shortened_label(self) -> tuple[int, int, int, int]:
@@ -30,13 +34,22 @@ class Experiment:
 
     def determine_max_channel(self, exp_channel_str: str) -> tuple[int, int, int]:
         "Returns a vector of of max n, p and alpha(a) values"
-        pass
-
-    def prepare_hivap_input_file(self):
+        # TODO: remove this temporary hardcode
+        return (6, 6, 2)
         pass
 
     def append_energy_series(self, energy_value: int):
         self.energy_data_series.append(energy_value)
+
+    def prepare_hivap_input_file(self):
+        energy_value = 0
+        energy_series_template_string = f" E={energy_value} IEXC 0 IFUS=11 LIMBAR= 1 JLOWER 0 JUPPER 0 0 0 0 ENERGY1= 0\nV0=59  r0=1.1477 D=0.644 Q2=0   CRED=1.0  NOCURV=0 NOPROX=0  IOPT=0\nITEST=0 sigr=2.2 cutoff=2.90 xth=0.720 APUSH=15.0  FPUSH=0.75  SPUSH=1\n-----------------------------------------------------------------------\n"
+        with open("hivapein_template.dat", "r") as template:
+            content = template.read()
+            content.replace("{shortened_label}", self.shortened_label)
+            for energy_value in self.energy_data_series:
+                content.replace("{energies_marker}", energy_series_template_string)
+                # TODO: there I finished
 
 
 def load_rows(filename: str) -> list[dict]:
