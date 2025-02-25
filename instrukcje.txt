@@ -1,0 +1,26 @@
+anie Szymonie,
+
+zgodnie z naszą piątkową rozmową wysyłam Panu kilka rzeczy:
+1. Katalog z kodem hivap napisanym pod linuxa. Jak Pan widzi, kod jest napisany w fortranie, więc pomiomo tego, że miałabym ochotę to i owo w nim zmienić, boję się nawet go dotknąć, wiec zostawiam ten kod jako czarną skrzynkę.
+Mi ten kod udało się bez problemy skompilować zwykłym Makefile, ale może tez może Pan po prostu użyć gotowego pliku wykonywalnego z katalogu 32-bit lub 64-bit, w zależności od sytemu, jaki Pan używa. Wysyłam Panu brzydką paczkę, z jakimiś katalogami i nie wiadomo czym, ale w takim formie ja ją dostałam, a nie chciałabym teraz robić potencjalnie nieskutecznego czyszczenia. W katalogu jest nieczytelny manual, jak to przy tych fortranowych programach, ale może coś ciekawego Pan tam znajdzie
+Do użycia kodu potrzebuje Pan trzech plików - hivapn (plik wykonywalny), mlz.dat - jakieś dane, hivapein.dat - plik inputowy. W tym pliku wpisuje się reakcję, dla której chcemy policzyć przekroje czynne oraz energie reakcji.
+Pierwsza linia pliku jest czysto informacyjna, mówi o tym dla jakiej reakcji liczymy przekroje. Linia 3 jest ważna, wpisuje się tam liczbę atomową i masową pocisku i tarczy. W lini 9 jest sekwencja w stylu:
+NEUTRONS=  6 PROTONS= 6
+Mówi ona o tym, jak dużo protonów i neutronów pozwalamy ,,wyrzucić" w procesie fuzji wyparowania. Przykład:
+jeśli mamy reakcję 26Al + 32Si -->  56Ni, to 56Ni jest jądrem złozonym, z którego wylatują protony, neutrony, cząstki alfa lub kombinację tychże. Określając maksymalną liczbę protonów (p_max) i neutronów (n_max), które moga wyparować, ograniczamy obliczenia do jąder o p+max i n_max mniejszej liczbie kolejno protonóœ i neutronów, niż jądro złożone.
+Kolejne linie zostawiamy bez zmian, aż do linii 32 i później. Są tam 3-liniowe segmenty parametrów, które, w pobieżnym używaniu programu, zmieniamy tylko energię pocisku. Zwykle powtarzamy tę 3-linikjową sekwencję dla różnych energii, żeby zobaczyć dla jakich wartości produkowane są jądra, które nas interesują a jednocześnie w mniejszym stopniu produkowane te, których nie chcemy mieć w danych. Jeśli Pan będzie porównywał przekrój czynny dla konkretnej energii, można podać tylko jedna wartość, ale myślę, ze warto przeskanować szerszy zakres energii, bo może się okazać, że dla ,,tej" wartości jest źle, ale dla 20 MeV więcej wychodzi idealnie.
+
+Hivap generuje szereg pustych plików o nazwach dummi1.dat - dummi7.dat (to naprawdę wyrzucę, ale jak wspomniałam, nie chciałam grzebać w Pana wersji) i dwa wartościowe pliki - hivapaus.dat, hivaperg.dat. hivaperg.dat jest ważny, w nim znajdują sie przekroje czynne (gdzieś na dole pliku). Przekroje są podane w mb.
+Z tego co widzę, przekroje są realtywnie łatwo czytelne i znajdowalne, ale może Pan tez skorzystać z kody pythonowego, o którym Panu mówiłam. Jest to plik hi2txt.py
+Program przyjmuje 2 obowiązkowe argumenty - input i output. Input to hivaperg.dat, a output to nazwa pliku tekstowego, który chce Pan stworzyć. Stworzony plik jest w miarę czytelny i zawiera:
+1. Energię wiązki w układzie laboratoryjnym
+2. Energię w układzie środka masy
+3. SIGFUS    SIGSUM    SIGRAT   SIGEVAP    SIGFIS  LCRIT - rózne sumaryczne przekroje czynne
+4. Przekroje czynne na konkretne jądro końcowe - tych pzekrojów i jąder będzie tyle, ile określi Pan uprzednio wspomniany NEUTRONS i  PROTONS, jeśli np. 6 i 6, to będzie obejmował jądra takie że z jądra złożonego zostało wyemitowanych: 6n0p, 6n1p, 6n2p... 0n0p, 0n1p, 0n2p..0n6p nukleonów.
+Przekroje czynne są podane w milibarnach (mb).
+
+Ufff..długie to było, ale chciałam, żeby Pan miał wszystko na piśmie.
+Pana zadanie polega na tym, ale w oparciu o dane z bazy, które Pan wyciągnął, obliczyć przewidywany przekrój czynny z wykorzystaniem programu hivap. Fajnie, gdyby udało się Panu uzyskać jakąś konkluzję, w jakich obszarach hivap radzi sobie dobrze, a dla jakiś gorzej. Tu nie stawiam Panu żadnych konkretnych pytań, może się Pan tymi danymi pobawić, albo pozostać na pisaniu narzędzi.
+
+Serdecznie pozdrawiam,
+Aleksandra Fijałkowska 

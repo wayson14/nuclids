@@ -6,7 +6,7 @@
    NOFISSION= 0  NONEUTRONS= 0  NOPROTONS= 0  NOALPHAS= 0 NOGAMMAS= 0    
    DISC=3  GAMMA PARAMETERS(IGAM)= 1                                     
  ----------------------------------------------------------------------- 
-   NEUTRONS=  6 PROTONS= 6                                               
+   NEUTRONS=  3 PROTONS= 0                                               
    MASSES LOG UNIT= 9  NUMB= 0  IOVER= 1  INERT= 0  INERF= 0 FINERT= 1   
    LIMITS= 1  PRINT= 1  LOGUN= 0  ICOR= 0  ISOMERS= 0 LEVDENS= 1         
    IRAST= 0  WKB= 1  ITRANS= 0  JFJI = 1                                 
