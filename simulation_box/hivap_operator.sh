@@ -20,11 +20,6 @@ mkdir ../results
 whole_start_time=$(date +%s)
 for (( i=n; i<s+1; i++ )); do
     start_time=$(date +%s)
-
-
-
-
-
     echo "================================================================================="
     echo "Processing relocde ${i}..."
     cp "../hivapein.dat.${i}" ./hivapein.dat && echo "Copied hivapein.dat.${i} into simulation_box"

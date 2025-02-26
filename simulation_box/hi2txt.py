@@ -276,9 +276,12 @@ def main():
                     nri = nw / 2
                     if args.verbose:
                         print("nw = ", nw, "nri = ", nri)
+
                     for w in range(0, nw, 2):
                         s1 = words[w + 1] + words[w]
+                        print(s1)
                         Nuc[nrn] = "".join(s1.split())
+                        print(f"Nuc[nrn]:{Nuc[nrn]}")
                         if args.verbose:
                             print(w, words[w], words[w + 1], nrn, Nuc[nrn])
                         nrn = nrn + 1
@@ -397,6 +400,7 @@ def main():
                         else:
                             s1 = words[iw - 1] + words[iw]
                             Nuc[nuc] = "".join(s1.split())
+                            print(f"{Nuc[nuc]}")
                             # if args.verbose:
                             #  print("Nuc[", nuc, "] = ", Nuc[nuc]);
                             nuc = nuc + 1
@@ -498,6 +502,7 @@ def main():
     print("{:>7}".format(" LCRIT"), end="", file=args.output)
     for n in range(0, nuc):
         s1 = "sig_" + Nuc[n]
+        print(f"s:{s1}, Nuc[n]:{Nuc[n]}")
         nucstr = "".join(s1.split())
         print("{:>10}".format(nucstr), end="", file=args.output)
         # print ("{0:>5}{1:>5}".format("sig_",Nuc[n]),

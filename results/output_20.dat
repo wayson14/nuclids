@@ -1,5 +1,0 @@
-Reaction:  
-Energies in MeV, cross sections in mb,  angular momenta in hbar
-SIGSUM = sum of residual nucleus cross sections.  SIGRAT = SIGSUM/SIGFUS
-
-  ELAB E*_CN    SIGFUS    SIGSUM    SIGRAT   SIGEVAP    SIGFIS  LCRIT

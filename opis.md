@@ -18,3 +18,4 @@ Lista pytań:
 2. Jak uwzględniać różną zawartość procentową różnych izotopów w badanym materiale? Czy wystarczy wziąć różne przekroje czynne na nie z różnymi wagami?
 3. Czy mogę dokończyć to po sesji? Bardzo mnie to zainteresowało, jednak na razie nie umiem przeprowadzić bardziej zaawansowanej analizy danych i muszę zdać analizę...
 4. Hivap nie bada przekrojów czynnych na fuzję mniejszych niż 1nb - przy czym niektóre dane eksperymentalne (np. 58Fe + 208Pb -> 266Hs) świadczą o sigmach rzędu pb - być może coś przeoczam, a być może jest to ograniczenie oprogramowania (1994)
+5. hi2txt.py nie ogarnia pierwiastków powyżej Z = 109 (Meitner, Mt)
