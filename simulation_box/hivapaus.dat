@@ -1,6 +1,6 @@
-(48)Ca+(207)Pb -> (255)No                                               
+(48)Ca+(238)U -> (286)Cn                                                
  ----------------------------------------------------------------------- 
-   MPROJ=  48  ZPROJ=  20  MTARG= 207  ZTARG= 82                         
+   MPROJ=  48  ZPROJ=  20  MTARG= 238  ZTARG= 92                         
    ISHELL(GS)= 2  ISHELL(SADDLE)= 2  PAIRING= 4  MC= 0  MP= 0            
    IBF= 1  FISROT PARAMETERS= 0                                          
    NOFISSION= 0  NONEUTRONS= 0  NOPROTONS= 0  NOALPHAS= 0 NOGAMMAS= 0    
@@ -29,15 +29,23 @@
   IF INERT NOT ZERO (LOWER PART YRAST LINE)                              
   ENERGY       SPIN           ENERGY       SPIN     ENERGY    SPIN       
  ----------------------------------------------------------------------- 
-  E=213.5 IEXC 0 IFUS=11 LIMBAR= 1 JLOWER 0 JUPPER 0 0 0 0 ENERGY1= 0    
+  E=229.641 IEXC 0 IFUS=11 LIMBAR= 1 JLOWER 0 JUPPER 0 0 0 0 ENERGY1= 0  
  V0=59  r0=1.1477 D=0.644 Q2=0   CRED=1.0  NOCURV=0 NOPROX=0  IOPT=0     
  ITEST=0 sigr=2.2 cutoff=2.90 xth=0.720 APUSH=15.0  FPUSH=0.75  SPUSH=1  
  ----------------------------------------------------------------------- 
-  E=216.7 IEXC 0 IFUS=11 LIMBAR= 1 JLOWER 0 JUPPER 0 0 0 0 ENERGY1= 0    
+  E=233.967 IEXC 0 IFUS=11 LIMBAR= 1 JLOWER 0 JUPPER 0 0 0 0 ENERGY1= 0  
  V0=59  r0=1.1477 D=0.644 Q2=0   CRED=1.0  NOCURV=0 NOPROX=0  IOPT=0     
  ITEST=0 sigr=2.2 cutoff=2.90 xth=0.720 APUSH=15.0  FPUSH=0.75  SPUSH=1  
  ----------------------------------------------------------------------- 
-  E=219.4 IEXC 0 IFUS=11 LIMBAR= 1 JLOWER 0 JUPPER 0 0 0 0 ENERGY1= 0    
+  E=239.735 IEXC 0 IFUS=11 LIMBAR= 1 JLOWER 0 JUPPER 0 0 0 0 ENERGY1= 0  
+ V0=59  r0=1.1477 D=0.644 Q2=0   CRED=1.0  NOCURV=0 NOPROX=0  IOPT=0     
+ ITEST=0 sigr=2.2 cutoff=2.90 xth=0.720 APUSH=15.0  FPUSH=0.75  SPUSH=1  
+ ----------------------------------------------------------------------- 
+  E=233.967 IEXC 0 IFUS=11 LIMBAR= 1 JLOWER 0 JUPPER 0 0 0 0 ENERGY1= 0  
+ V0=59  r0=1.1477 D=0.644 Q2=0   CRED=1.0  NOCURV=0 NOPROX=0  IOPT=0     
+ ITEST=0 sigr=2.2 cutoff=2.90 xth=0.720 APUSH=15.0  FPUSH=0.75  SPUSH=1  
+ ----------------------------------------------------------------------- 
+  E=239.735 IEXC 0 IFUS=11 LIMBAR= 1 JLOWER 0 JUPPER 0 0 0 0 ENERGY1= 0  
  V0=59  r0=1.1477 D=0.644 Q2=0   CRED=1.0  NOCURV=0 NOPROX=0  IOPT=0     
  ITEST=0 sigr=2.2 cutoff=2.90 xth=0.720 APUSH=15.0  FPUSH=0.75  SPUSH=1  
  ----------------------------------------------------------------------- 

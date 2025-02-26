@@ -277,14 +277,48 @@ def main():
                     if args.verbose:
                         print("nw = ", nw, "nri = ", nri)
 
-                    for w in range(0, nw, 2):
-                        s1 = words[w + 1] + words[w]
-                        print(s1)
-                        Nuc[nrn] = "".join(s1.split())
+                    ######OLD#######
+                    # for w in range(0, nw, 2):
+                    #     s1 = words[w + 1] + words[w]
+                    #     print(s1)
+                    #     Nuc[nrn] = "".join(s1.split())
+                    #     print(f"Nuc[nrn]:{Nuc[nrn]}")
+                    #     if args.verbose:
+                    #         print(w, words[w], words[w + 1], nrn, Nuc[nrn])
+                    #     nrn = nrn + 1
+                    ################
+                    ######NEW#######
+
+                    # for w in range(0, nw, 2):
+                    #     s1 = words[w + 1] + words[w]
+                    #     print(s1)
+                    #     Nuc[nrn] = "".join(s1.split())
+                    #     print(f"Nuc[nrn]:{Nuc[nrn]}")
+                    #     if args.verbose:
+                    #         print(w, words[w], words[w + 1], nrn, Nuc[nrn])
+                    #     nrn = nrn + 1
+
+                    w = 0
+                    while w < nw:
+                        # if w % 2 == 0:  # even indexes
+                        print(words[w][0:3])
+                        if words[w][0].isdigit():
+                            # if true, then Z>109, so needed special treatment
+                            s1 = words[w]
+                            print(s1)
+                            Nuc[nrn] = s1  # "".join(s1.split())
+                            nrn += 1
+                            w += 1
+                        else:  # Z <= 109
+                            s1 = words[w + 1] + words[w]
+                            Nuc[nrn] = "".join(s1.split())
+                            nrn += 1
+                            w += 2
                         print(f"Nuc[nrn]:{Nuc[nrn]}")
-                        if args.verbose:
-                            print(w, words[w], words[w + 1], nrn, Nuc[nrn])
-                        nrn = nrn + 1
+                    print(Nuc)
+                    # else:
+                    # pass
+                    ################
 
     if nrn == 0:
         print(
