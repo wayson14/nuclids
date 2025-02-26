@@ -33,6 +33,7 @@ def extract_channels_energies_sigmas_from_file(filename: str = "output_5.dat"):
         energies = []
         n_sum = 0
         p_sum = 0
+        final_table = []
         for line in f:
             line_number += 1
             print(f"{line_number}: {line}")
@@ -54,8 +55,14 @@ def extract_channels_energies_sigmas_from_file(filename: str = "output_5.dat"):
                     residual_dict, n_sum, p_sum
                 )
                 print(channels_dict)
-
-            print("====")
+                headers = ["ELAB"] + list(channels_dict.values())
+                final_table.append(headers)
+            if line_number > 5:
+                energies.append(float(line.split()[0]))
+                sigmas = line.split()[8:]
+                row = [float(line.split()[0])] + sigmas
+                final_table.append(row)
+        return final_table
 
 
 #     content = f.readline()
@@ -75,4 +82,4 @@ def extract_channels_energies_sigmas_from_file(filename: str = "output_5.dat"):
 #             self.input_file_string = content
 #         return
 if __name__ == "__main__":
-    extract_channels_energies_sigmas_from_file()
+    print(extract_channels_energies_sigmas_from_file())
