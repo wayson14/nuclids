@@ -174,7 +174,9 @@ def main():
     Estar = [0.0 for i in range(128)]
 
     # Cross section as 2D array with E* vs nuc id.
-    sigres = [[[0.0 for z in range(16)] for n in range(16)] for e in range(16)]
+    # TODO: My modification - original was 16
+    SIZE = 16
+    sigres = [[[0.0 for z in range(SIZE)] for n in range(SIZE)] for e in range(SIZE)]
 
     # if args.verbose: print ("sigres = ", sigres);
 
@@ -270,13 +272,15 @@ def main():
                     nw = len(words)
                     # nri = nr of isotopes per element. Same for all elements.
                     # Used later when extracting cross section data/
+                    # TODO: My own comment: HERE MUST BE AN EVEN NUMBER
                     nri = nw / 2
-                    # if args.verbose: print("nw = ", nw, "nri = ", nri);
+                    if args.verbose:
+                        print("nw = ", nw, "nri = ", nri)
                     for w in range(0, nw, 2):
                         s1 = words[w + 1] + words[w]
                         Nuc[nrn] = "".join(s1.split())
-                        # if args.verbose: print(w, words[w], words[w+1],
-                        #                       nrn, Nuc[nrn]);
+                        if args.verbose:
+                            print(w, words[w], words[w + 1], nrn, Nuc[nrn])
                         nrn = nrn + 1
 
     if nrn == 0:
@@ -418,15 +422,35 @@ def main():
                             nnr = iw - 1
                             # neutron nr counter
                             # if args.verbose: print ("nnr=", nnr);
+                            # try:
+                            try:
+                                float(words[iw])
+                            except ValueError:
+                                continue
                             sigres[znr][nnr][enr] = float(words[iw])
-                            # if args.verbose: print ("sigres[", \
-                            #                        znr, "][", \
-                            #                        nnr, "][", \
-                            #                        enr, "] = ", \
-                            #                    sigres[znr][nnr][enr]);
+
+                            #######################
+                            # except ValueError:
+                            #     print(words[iw])
+                            #     break
+                            # except IndexError:
+                            #     break
+                            #######################
+                            # if args.verbose:
+                            # print(
+                            #     "sigres[",
+                            #     znr,
+                            #     "][",
+                            #     nnr,
+                            #     "][",
+                            #     enr,
+                            #     "] = ",
+                            #     sigres[znr][nnr][enr],
+                            # )
                     enr = enr + 1
                     # increment the E* counter
-                    # if args.verbose: print ("enr=", enr);
+                    # if args.verbose:
+                    # print("enr=", enr)
 
     nrz = znr + 1
     nrn = nnr + 1
