@@ -17,8 +17,14 @@ fi
 # Iterate n times, appending n value to output.txt
 mkdir ../hivapergs 
 mkdir ../results
-
+whole_start_time=$(date +%s)
 for (( i=n; i<s+1; i++ )); do
+    start_time=$(date +%s)
+
+
+
+
+
     echo "================================================================================="
     echo "Processing relocde ${i}..."
     cp "../hivapein.dat.${i}" ./hivapein.dat && echo "Copied hivapein.dat.${i} into simulation_box"
@@ -26,9 +32,15 @@ for (( i=n; i<s+1; i++ )); do
     cp hivaperg.dat "../hivapergs/hivaperg_${i}.dat" && echo "Copied hivaperg.dat.${i} into hivapergs"
     python hi2txt.py -v hivaperg.dat "output_${i}.dat" || echo "^^^ Error in hi2txt.py ^^^"
     mv "output_${i}.dat" "../results/output_${i}.dat" && echo "Copied output_${i}.dat into results"
+    end_time=$(date +%s)
+    elapsed_time=$(( end_time - start_time ))
+    echo "Execution time: $elapsed_time seconds"
     # echo "$n" >> output.txt
 done
-
+whole_end_time=$(date +%s)
+whole_elapsed_time=$(( whole_end_time - whole_start_time ))
+echo "================================================================================="
+echo "Whole procedure execution time: $whole_elapsed_time seconds"
 # echo "Appended '$n' to output.txt, $n times."
 
 

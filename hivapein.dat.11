@@ -6,7 +6,7 @@
   NOFISSION= 0  NONEUTRONS= 0  NOPROTONS= 0  NOALPHAS= 0 NOGAMMAS= 0   
   DISC=3  GAMMA PARAMETERS(IGAM)= 1                                     
 ----------------------------------------------------------------------- 
-  NEUTRONS=  6 PROTONS= 6                                               
+  NEUTRONS=  12 PROTONS= 12                                               
   MASSES LOG UNIT= 9  NUMB= 0  IOVER= 1  INERT= 0  INERF= 0 FINERT= 1   
   LIMITS= 1  PRINT= 1  LOGUN= 0  ICOR= 0  ISOMERS= 0 LEVDENS= 1        
   IRAST= 0  WKB= 1  ITRANS= 0  JFJI = 1                                
@@ -29,11 +29,7 @@ CUT=.1E-6 FRACT2=.1E-6  ABSMIN=0 PRCN=0 SIGLOW=0 DEL1=0 NOLEP=0 =0 =0
  IF INERT NOT ZERO (LOWER PART YRAST LINE)                             
  ENERGY       SPIN           ENERGY       SPIN     ENERGY    SPIN      
 -----------------------------------------------------------------------
- E=250.47 IEXC 0 IFUS=11 LIMBAR= 1 JLOWER 0 JUPPER 0 0 0 0 ENERGY1= 0    
- V0=59  r0=1.1477 D=0.644 Q2=0   CRED=1.0  NOCURV=0 NOPROX=0  IOPT=0    
- ITEST=0 sigr=2.2 cutoff=2.90 xth=0.720 APUSH=15.0  FPUSH=0.75  SPUSH=1 
------------------------------------------------------------------------
- E=306.9173076923077 IEXC 0 IFUS=11 LIMBAR= 1 JLOWER 0 JUPPER 0 0 0 0 ENERGY1= 0
+ E=306.917 IEXC 0 IFUS=11 LIMBAR= 1 JLOWER 0 JUPPER 0 0 0 0 ENERGY1= 0
 V0=59  r0=1.1477 D=0.644 Q2=0   CRED=1.0  NOCURV=0 NOPROX=0  IOPT=0
 ITEST=0 sigr=2.2 cutoff=2.90 xth=0.720 APUSH=15.0  FPUSH=0.75  SPUSH=1
 -----------------------------------------------------------------------

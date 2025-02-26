@@ -1,6 +1,6 @@
-(58)Fe+(208)Pb -> (266)Hs                                               
+(64)Ni+(209)Bi -> (273)Rg                                               
  ----------------------------------------------------------------------- 
-   MPROJ=  58  ZPROJ=  26  MTARG= 208  ZTARG= 82                         
+   MPROJ=  64  ZPROJ=  28  MTARG= 209  ZTARG= 83                         
    ISHELL(GS)= 2  ISHELL(SADDLE)= 2  PAIRING= 4  MC= 0  MP= 0            
    IBF= 1  FISROT PARAMETERS= 0                                          
    NOFISSION= 0  NONEUTRONS= 0  NOPROTONS= 0  NOALPHAS= 0 NOGAMMAS= 0    
@@ -24,40 +24,20 @@
     SHELL0= -1.2 DELT= 0.  QVALUE= 0.                                    
  ----------------------------------------------------------------------- 
       ONLY IF LIMITS NOT ZERO                                            
- CUT=.1E-9 FRACT2=.1E-9  ABSMIN=0 PRCN=0 SIGLOW=0 DEL1=0 NOLEP=0 =0 =0   
+ CUT=.1E-6 FRACT2=.1E-6  ABSMIN=0 PRCN=0 SIGLOW=0 DEL1=0 NOLEP=0 =0 =0   
  ----------------------------------------------------------------------- 
   IF INERT NOT ZERO (LOWER PART YRAST LINE)                              
   ENERGY       SPIN           ENERGY       SPIN     ENERGY    SPIN       
  ----------------------------------------------------------------------- 
-  E=276.244 IEXC 0 IFUS=11 LIMBAR= 1 JLOWER 0 JUPPER 0 0 0 0 ENERGY1= 0  
+  E=320.0 IEXC 0 IFUS=11 LIMBAR= 1 JLOWER 0 JUPPER 0 0 0 0 ENERGY1= 0    
  V0=59  r0=1.1477 D=0.644 Q2=0   CRED=1.0  NOCURV=0 NOPROX=0  IOPT=0     
  ITEST=0 sigr=2.2 cutoff=2.90 xth=0.720 APUSH=15.0  FPUSH=0.75  SPUSH=1  
  ----------------------------------------------------------------------- 
-  E=277.484 IEXC 0 IFUS=11 LIMBAR= 1 JLOWER 0 JUPPER 0 0 0 0 ENERGY1= 0  
+  E=323.0 IEXC 0 IFUS=11 LIMBAR= 1 JLOWER 0 JUPPER 0 0 0 0 ENERGY1= 0    
  V0=59  r0=1.1477 D=0.644 Q2=0   CRED=1.0  NOCURV=0 NOPROX=0  IOPT=0     
  ITEST=0 sigr=2.2 cutoff=2.90 xth=0.720 APUSH=15.0  FPUSH=0.75  SPUSH=1  
  ----------------------------------------------------------------------- 
-  E=278.891 IEXC 0 IFUS=11 LIMBAR= 1 JLOWER 0 JUPPER 0 0 0 0 ENERGY1= 0  
- V0=59  r0=1.1477 D=0.644 Q2=0   CRED=1.0  NOCURV=0 NOPROX=0  IOPT=0     
- ITEST=0 sigr=2.2 cutoff=2.90 xth=0.720 APUSH=15.0  FPUSH=0.75  SPUSH=1  
- ----------------------------------------------------------------------- 
-  E=280.413 IEXC 0 IFUS=11 LIMBAR= 1 JLOWER 0 JUPPER 0 0 0 0 ENERGY1= 0  
- V0=59  r0=1.1477 D=0.644 Q2=0   CRED=1.0  NOCURV=0 NOPROX=0  IOPT=0     
- ITEST=0 sigr=2.2 cutoff=2.90 xth=0.720 APUSH=15.0  FPUSH=0.75  SPUSH=1  
- ----------------------------------------------------------------------- 
-  E=282.344 IEXC 0 IFUS=11 LIMBAR= 1 JLOWER 0 JUPPER 0 0 0 0 ENERGY1= 0  
- V0=59  r0=1.1477 D=0.644 Q2=0   CRED=1.0  NOCURV=0 NOPROX=0  IOPT=0     
- ITEST=0 sigr=2.2 cutoff=2.90 xth=0.720 APUSH=15.0  FPUSH=0.75  SPUSH=1  
- ----------------------------------------------------------------------- 
-  E=284.198 IEXC 0 IFUS=11 LIMBAR= 1 JLOWER 0 JUPPER 0 0 0 0 ENERGY1= 0  
- V0=59  r0=1.1477 D=0.644 Q2=0   CRED=1.0  NOCURV=0 NOPROX=0  IOPT=0     
- ITEST=0 sigr=2.2 cutoff=2.90 xth=0.720 APUSH=15.0  FPUSH=0.75  SPUSH=1  
- ----------------------------------------------------------------------- 
-  E=287.625 IEXC 0 IFUS=11 LIMBAR= 1 JLOWER 0 JUPPER 0 0 0 0 ENERGY1= 0  
- V0=59  r0=1.1477 D=0.644 Q2=0   CRED=1.0  NOCURV=0 NOPROX=0  IOPT=0     
- ITEST=0 sigr=2.2 cutoff=2.90 xth=0.720 APUSH=15.0  FPUSH=0.75  SPUSH=1  
- ----------------------------------------------------------------------- 
-  E=287.625 IEXC 0 IFUS=11 LIMBAR= 1 JLOWER 0 JUPPER 0 0 0 0 ENERGY1= 0  
+  E=326.0 IEXC 0 IFUS=11 LIMBAR= 1 JLOWER 0 JUPPER 0 0 0 0 ENERGY1= 0    
  V0=59  r0=1.1477 D=0.644 Q2=0   CRED=1.0  NOCURV=0 NOPROX=0  IOPT=0     
  ITEST=0 sigr=2.2 cutoff=2.90 xth=0.720 APUSH=15.0  FPUSH=0.75  SPUSH=1  
  ----------------------------------------------------------------------- 

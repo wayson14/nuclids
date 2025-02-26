@@ -7,6 +7,9 @@ Creates n hivap input tables based on input csv file, template of columns:
 relcode | shortened_label       | energy (E_lab) [MeV] | max_channel   | ...(unnecessary)
 (int)   | (a)Cr+(a)Pb -> (a)Sg  | 250                  | 1n2p1a        | ...(unnecessary)
 """
+N_CHANNEL = 12
+P_CHANNEL = 12
+A_CHANNEL = 2
 
 
 class Experiment:
@@ -37,7 +40,7 @@ class Experiment:
     def determine_max_channel(self, exp_channel_str: str) -> tuple[int, int, int]:
         "Returns a vector of of max n, p and alpha(a) values"
         # TODO: remove this temporary hardcode
-        return (6, 6, 2)
+        return (N_CHANNEL, P_CHANNEL, A_CHANNEL)
         pass
 
     def append_energy_series(self, energy_value: int):
@@ -127,12 +130,13 @@ def experiment_generator(csv_filename="results.csv"):
             experiment = Experiment(row)
             experiment_dict[row["relcode"]] = experiment
             relcodes_table.append(row["relcode"])
+            experiment.energy_data_series[0] = round(float(row["energy"]), 3)
         else:
             experiment: Experiment = experiment_dict[row["relcode"]]
-            experiment.append_energy_series(row["energy"])
+            experiment.append_energy_series(round(float(row["energy"]), 3))
 
     for key in experiment_dict.keys():
-        if int(key) < 20:
+        if int(key) <= 20:
             experiment_obj = experiment_dict[key]
             experiment_obj.generate_hivapein()
         else:

@@ -1,4 +1,6 @@
 instrukcje.txt
+*hivaperg.dat*
+*hivapein.dat*
 # results
 *.csv
 
@@ -176,3 +178,4 @@ cython_debug/
 
 # PyPI configuration file
 .pypirc
+
