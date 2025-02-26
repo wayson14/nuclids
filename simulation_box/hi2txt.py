@@ -399,26 +399,34 @@ def main():
                             # if args.verbose: print("nuc = ", nuc)
             else:  # Here are the lines with E* (first column) and xsects
                 words = str.split()
-                nrw = len(words)
-                for iw in range(0, nrw):  # Extract E* and cross sections
-                    # if args.verbose: print ("iw=", iw);
-                    if iw == 0:  # This is the first column with the E* value
-                        Estar[enr] = float(words[0])
-                        # if args.verbose: print ("Estar[", enr, "] = ",
-                        #                        Estar[enr]);
-                    else:  # cross section values in the remaining nri columns
-                        nnr = iw - 1
-                        # neutron nr counter
-                        # if args.verbose: print ("nnr=", nnr);
-                        sigres[znr][nnr][enr] = float(words[iw])
-                        # if args.verbose: print ("sigres[", \
-                        #                        znr, "][", \
-                        #                        nnr, "][", \
-                        #                        enr, "] = ", \
-                        #                    sigres[znr][nnr][enr]);
-                enr = enr + 1
-                # increment the E* counter
-                # if args.verbose: print ("enr=", enr);
+                # TODO: my own modification checks for the end of the hivaperg file
+                if ("Ende" == words[0]) and ("HIVAP" in words):
+                    pass
+                else:
+                    nrw = len(words)
+                    for iw in range(0, nrw):  # Extract E* and cross sections
+                        # if args.verbose: print ("iw=", iw);
+                        if iw == 0:  # This is the first column with the E* value
+
+                            try:  # TODO: My own modification
+                                Estar[enr] = float(words[0])
+                            except BaseException:
+                                Estar[enr] = 0.0
+                            # if args.verbose: print ("Estar[", enr, "] = ",
+                            #                        Estar[enr]);
+                        else:  # cross section values in the remaining nri columns
+                            nnr = iw - 1
+                            # neutron nr counter
+                            # if args.verbose: print ("nnr=", nnr);
+                            sigres[znr][nnr][enr] = float(words[iw])
+                            # if args.verbose: print ("sigres[", \
+                            #                        znr, "][", \
+                            #                        nnr, "][", \
+                            #                        enr, "] = ", \
+                            #                    sigres[znr][nnr][enr]);
+                    enr = enr + 1
+                    # increment the E* counter
+                    # if args.verbose: print ("enr=", enr);
 
     nrz = znr + 1
     nrn = nnr + 1
