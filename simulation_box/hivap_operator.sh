@@ -27,6 +27,9 @@ for (( i=n; i<s+1; i++ )); do
     cp hivaperg.dat "../hivapergs/hivaperg_${i}.dat" && echo "Copied hivaperg.dat.${i} into hivapergs"
     python hi2txt.py -v hivaperg.dat "output_${i}.dat" || echo "^^^ Error in hi2txt.py ^^^"
     mv "output_${i}.dat" "../results/output_${i}.dat" && echo "Copied output_${i}.dat into results"
+    cd ../results/
+    python data_plotter.py "output_${i}.dat" "plot_${i}.png" && echo "Processed output_${i}.dat into and plotted plot_${i}.png"
+    cd ../simulation_box
     end_time=$(date +%s)
     elapsed_time=$(( end_time - start_time ))
     echo "Execution time: $elapsed_time seconds"

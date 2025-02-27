@@ -5,6 +5,11 @@ import numpy as np
 import sys
 
 
+class NoHivapOutput(ValueError):
+    def __init__(self):
+        pass
+
+
 # I'm not sure if it needs consideration between aphas and compond neutrons, so I have omitted alpha channel
 def translate_residuals_into_channels(
     residual_dict: dict, n_sum: int, p_sum: int
@@ -32,9 +37,9 @@ def extract_reaction_label_from_file(filename: str = "output_5.dat") -> str:
     with open(filename, "r") as f:
         words = f.readline().split()
         reaction_label = (
-            f"({words[4]}){pt.elements[int(words[2])]}"
+            f"({words[8]}){pt.elements[int(words[6])]}"
             + " + "
-            + f"({words[8]}){pt.elements[int(words[6])]}"
+            + f"({words[4]}){pt.elements[int(words[2])]}"
             + " --> "
             + f"({int(words[4])+int(words[8])}){pt.elements[int(words[2])+int(words[6])]}"
         )
@@ -54,7 +59,10 @@ def extract_channels_energies_sigmas_from_file(filename: str = "output_5.dat"):
             # print(f"{line_number}: {line}")
 
             if line_number == 1:
+
                 words = line.split()
+                if len(words) == 1:  # file is with no results
+                    raise NoHivapOutput()
                 n_sum = int(words[4]) + int(words[8])
                 p_sum = int(words[2]) + int(words[6])
 
@@ -127,12 +135,19 @@ def plot_experiment(
     ax.legend(loc="center left", bbox_to_anchor=(1.025, 0.5), title="EvR channels")
 
     plt.savefig(output_filename)
-    plt.show()
+    # plt.show()
 
 
 if __name__ == "__main__":
     input_filename = sys.argv[1]
     plot_filename = sys.argv[2]
-    plot_data = extract_channels_energies_sigmas_from_file(input_filename)
-    reaction_label = extract_reaction_label_from_file(input_filename)
-    plot_experiment(plot_data, reaction_label, plot_filename)
+    try:
+        plot_data = extract_channels_energies_sigmas_from_file(input_filename)
+        reaction_label = extract_reaction_label_from_file(input_filename)
+        plot_experiment(plot_data, reaction_label, plot_filename)
+    except NoHivapOutput:
+        print("Hivap provided no sigmas for this reaction (check hivaperg.dat)")
+    except FileNotFoundError:
+        print("No file found!")
+    except BaseException as err:
+        print(err.with_traceback())

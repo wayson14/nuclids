@@ -1,14 +1,15 @@
 import json
 import csv
 import periodictable as pt
+import sys
 
 """Hivap Input Preparator:
 Creates n hivap input tables based on input csv file, template of columns:
 relcode | shortened_label       | energy (E_lab) [MeV] | max_channel   | ...(unnecessary)
 (int)   | (a)Cr+(a)Pb -> (a)Sg  | 250                  | 1n2p1a        | ...(unnecessary)
 """
-N_CHANNEL = 12
-P_CHANNEL = 12
+N_CHANNEL = 6
+P_CHANNEL = 6
 A_CHANNEL = 2
 
 
@@ -110,7 +111,7 @@ def save_hivap_input_file(relcode):
     pass
 
 
-def experiment_generator(csv_filename="results.csv"):
+def experiment_generator(csv_filename="results.csv", start_relcode=1, stop_relcode=1):
     """Function which:
     1. reads the content of the whole csv containing experiment series,
     2. creates Experiment objects of particular experiments (rows where
@@ -136,7 +137,7 @@ def experiment_generator(csv_filename="results.csv"):
             experiment.append_energy_series(round(float(row["energy"]), 3))
 
     for key in experiment_dict.keys():
-        if int(key) <= 20:
+        if (int(key) >= start_relcode) and (int(key) <= stop_relcode):
             experiment_obj = experiment_dict[key]
             experiment_obj.generate_hivapein()
         else:
@@ -148,4 +149,8 @@ def experiment_generator(csv_filename="results.csv"):
 
 
 if __name__ == "__main__":
-    experiment_generator()
+    experiment_generator(
+        csv_filename=sys.argv[1],
+        start_relcode=int(sys.argv[2]),
+        stop_relcode=int(sys.argv[3]),
+    )

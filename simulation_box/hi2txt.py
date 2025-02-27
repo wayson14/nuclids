@@ -426,7 +426,9 @@ def main():
                             #  print("Nuc[", nuc, "] = ", Nuc[nuc]);
                             nuc = nuc + 1
                             # if args.verbose: print("nuc = ", nuc)
+                        print(words[iw][-2:-1])
                         if words[iw][-2:-1] == "Ns":
+
                             words[iw][-2:-1] = "Bh"
                 else:
                     print("variant 2")
@@ -435,6 +437,14 @@ def main():
                         if args.verbose:
                             print("iw = ", iw)
                             print("words[", iw, "]", words[iw])
+                            print(words[iw][-2:])
+
+                        # Bohrium adjustment
+                        if words[iw][-2:] == "Ns":
+                            words[iw] = words[iw][:-2] + "Bh"
+                        # Dubnium
+                        if words[iw][-2:] == "Ha":
+                            words[iw] = words[iw][:-2] + "Db"
                         if iw == 0:
                             estar = words[iw]
                             # This word should be "E*/MeV"
