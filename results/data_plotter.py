@@ -1,6 +1,7 @@
-import matplotlib
+import matplotlib.pyplot as plt
 import periodictable as pt
 import re
+import numpy as np
 
 
 # I'm not sure if it needs consideration between aphas and compond neutrons, so I have omitted alpha channel
@@ -81,5 +82,71 @@ def extract_channels_energies_sigmas_from_file(filename: str = "output_5.dat"):
 
 #             self.input_file_string = content
 #         return
+
+
+def plot_experiment(data_table):
+    energies = []
+    data = []
+    data2 = []
+    headers = []
+    s = 0
+    data_series = [len(data_table[0])]
+
+    # print(data_table)
+    n = len(data_table)
+    columns = zip(*data_table)
+    columns = list(columns)
+    print(columns)
+    # for row in data_table:
+    #     # for i in range(len(row)):
+
+    #     if row[0] == "ELAB":
+    #         headers = row
+    #         continue
+    #     else:
+    #         for i in range(len(row)):
+    #             if i == 0:
+    #                 energies.append(row[i])
+    #             else:
+    #                 data[i].append(row[i])
+    #         print(row)
+    #         data.append(row[10])
+    #         data2.append(row[11])
+
+    # for i in range(len(data_table)):
+    #     if i == 0:
+    #         continue
+    #     for j in range(len(data_table[i])):
+    #         # data_series.
+    #         if j == 0:
+    #             continue
+    #         data_series[j].append(data_table[i][j])
+    # plt.style.use("_mpl-gallery")
+
+    # make data
+    x = energies
+    # y = 4 + 1 * np.sin(2 * x)
+    print(data)
+    y = data
+    # x2 = np.linspace(0, 10, 25)
+    # y2 = 4 + 1 * np.sin(2 * x2)
+
+    # plot
+    fig, ax = plt.subplots()
+
+    # ax.plot(x2, y2 + 2.5, "x", markeredgewidth=2)
+    for serial in data_series:
+        print(serial)
+        ax.plot(x, serial, "x", markeredgewidth=2.0)
+    # ax.plot(x, y, "x", markeredgewidth=2.0)
+    # ax.plot(x, data2, "x", markeredgewidth=2.0)
+    # ax.plot(x2, y2 - 2.5, "o-", linewidth=2)
+
+    # ax.set(xlim=(0, 8), xticks=np.arange(1, 8), ylim=(0, 8), yticks=np.arange(1, 8))
+    # plt.yscale("log")
+    plt.show()
+
+
 if __name__ == "__main__":
-    print(extract_channels_energies_sigmas_from_file())
+    plot_data = extract_channels_energies_sigmas_from_file()
+    plot_experiment(plot_data)
