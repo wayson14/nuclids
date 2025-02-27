@@ -33,6 +33,8 @@ import sys
 import string
 import numpy as np
 import matplotlib.pyplot as plt
+import periodictable as pt
+import re
 
 
 def check_python_version():
@@ -305,7 +307,7 @@ def main():
                         if words[w][0].isdigit():
                             # if true, then Z>109, so needed special treatment
                             s1 = words[w]
-                            print(s1)
+                            print(f"s1: {s1}")
                             Nuc[nrn] = s1  # "".join(s1.split())
                             nrn += 1
                             w += 1
@@ -405,13 +407,15 @@ def main():
                 # if args.verbose: print (str);
                 words = str.split()
                 nrw = len(words)
-                # if args.verbose: print ("len(words) = ", nrw);
+                if args.verbose:
+                    print("len(words) = ", nrw)
                 if nrw - 1 == nri:  # no space between mass number and element nr
+                    print("variant 1")
                     for iw in range(0, nrw):  # Extract the nuclide names
                         # for w in words: # Extract the nuclide names
-                        # if args.verbose:
-                        #  print ("iw = ", iw);
-                        #  print ("words[", iw, "]", words[iw]);
+                        if args.verbose:
+                            print("iw = ", iw)
+                            print("words[", iw, "]", words[iw])
                         if iw == 0:
                             estar = words[iw]
                             # This word should be "E*/MeV"
@@ -422,19 +426,34 @@ def main():
                             #  print("Nuc[", nuc, "] = ", Nuc[nuc]);
                             nuc = nuc + 1
                             # if args.verbose: print("nuc = ", nuc)
+                        if words[iw][-2:-1] == "Ns":
+                            words[iw][-2:-1] = "Bh"
                 else:
-                    for iw in range(0, nrw, 2):  # Extract the nuclide names
+                    print("variant 2")
+                    for iw in range(0, nrw, 1):  # Extract the nuclide names
                         # for w in words: # Extract the nuclide names
-                        # if args.verbose:
-                        #  print ("iw = ", iw);
-                        #  print ("words[", iw, "]", words[iw]);
+                        if args.verbose:
+                            print("iw = ", iw)
+                            print("words[", iw, "]", words[iw])
                         if iw == 0:
                             estar = words[iw]
                             # This word should be "E*/MeV"
-                        else:
-                            s1 = words[iw - 1] + words[iw]
+                        else:  # Here are problems with numeric nuclides (above 109Z)
+                            # s1 = words[iw - 1] + words[iw]
+
+                            symbol = re.findall("[A-Z]{1}[a-z]{1}|[A-Z]{1}", words[iw])
+                            if len(symbol) == 0:
+                                element_z = int(words[iw][-4:-1])
+                                translated_symbol = pt.elements[element_z]
+                                print(translated_symbol)
+                                ts = translated_symbol.symbol
+                                isotope_a = int(words[iw][0:3])
+                                words[iw] = f"{isotope_a}" + ts
+                            if words[iw][-2:-1] == "Ns":
+                                words[iw][-2:-1] = "Bh"  # Bohrium incident
+                            s1 = words[iw] + " "
                             Nuc[nuc] = "".join(s1.split())
-                            print(f"{Nuc[nuc]}")
+                            # print(f"{Nuc[nuc]}")
                             # if args.verbose:
                             #  print("Nuc[", nuc, "] = ", Nuc[nuc]);
                             nuc = nuc + 1
