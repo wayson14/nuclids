@@ -11,7 +11,7 @@ def translate_residuals_into_channels(
     channels_dict = {}
     i = 1
     for key in residual_dict.keys():
-        print(residual_dict)
+        # print(residual_dict)
 
         symbols_match = re.search("[A-Z]{1}[a-z]{1}|[A-Z]{1}", residual_dict[key])
         element_symbol = symbols_match.group()
@@ -27,6 +27,19 @@ def translate_residuals_into_channels(
     return channels_dict
 
 
+def extract_reaction_label_from_file(filename: str = "output_5.dat") -> str:
+    with open(filename, "r") as f:
+        words = f.readline().split()
+        reaction_label = (
+            f"({words[4]}){pt.elements[int(words[2])]}"
+            + " + "
+            + f"({words[8]}){pt.elements[int(words[6])]}"
+            + " --> "
+            + f"({int(words[4])+int(words[8])}){pt.elements[int(words[2])+int(words[6])]}"
+        )
+    return reaction_label
+
+
 def extract_channels_energies_sigmas_from_file(filename: str = "output_5.dat"):
     with open(filename, "r") as f:
         line_number = 0
@@ -37,7 +50,7 @@ def extract_channels_energies_sigmas_from_file(filename: str = "output_5.dat"):
         final_table = []
         for line in f:
             line_number += 1
-            print(f"{line_number}: {line}")
+            # print(f"{line_number}: {line}")
 
             if line_number == 1:
                 words = line.split()
@@ -55,98 +68,68 @@ def extract_channels_energies_sigmas_from_file(filename: str = "output_5.dat"):
                 channels_dict = translate_residuals_into_channels(
                     residual_dict, n_sum, p_sum
                 )
-                print(channels_dict)
+                # print(channels_dict)
                 headers = ["ELAB"] + list(channels_dict.values())
                 final_table.append(headers)
             if line_number > 5:
                 energies.append(float(line.split()[0]))
                 sigmas = line.split()[8:]
-                row = [float(line.split()[0])] + sigmas
+                row = [float(line.split()[0])] + [
+                    float(x) for x in sigmas
+                ]  # str to float
                 final_table.append(row)
         return final_table
 
 
-#     content = f.readline()
-# #TODO: TU SKOŃCZYŁEM
-#             content = content.format(
-#                 shortened_label=self.shortened_label,
-#                 a_proj=self.a_proj,
-#                 z_proj=self.z_proj,
-#                 a_targ=self.a_targ,
-#                 z_targ=self.z_targ,
-#                 channel_n=self.channel_n,
-#                 channel_a=self.channel_a,
-#                 channel_p=self.channel_p,
-#                 energies_marker=energy_input_str,
-#             )
-
-#             self.input_file_string = content
-#         return
-
-
-def plot_experiment(data_table):
-    energies = []
-    data = []
-    data2 = []
-    headers = []
-    s = 0
-    data_series = [len(data_table[0])]
-
-    # print(data_table)
-    n = len(data_table)
+def plot_experiment(
+    data_table, reaction_label: str = "AA + BB", output_filename: str = "test_plot.png"
+):
+    i = 0
+    markers_table = ["o", "v", "^", "s", "P", "X", "D"]
     columns = zip(*data_table)
     columns = list(columns)
-    print(columns)
-    # for row in data_table:
-    #     # for i in range(len(row)):
+    # print(columns)
 
-    #     if row[0] == "ELAB":
-    #         headers = row
-    #         continue
-    #     else:
-    #         for i in range(len(row)):
-    #             if i == 0:
-    #                 energies.append(row[i])
-    #             else:
-    #                 data[i].append(row[i])
-    #         print(row)
-    #         data.append(row[10])
-    #         data2.append(row[11])
-
-    # for i in range(len(data_table)):
-    #     if i == 0:
-    #         continue
-    #     for j in range(len(data_table[i])):
-    #         # data_series.
-    #         if j == 0:
-    #             continue
-    #         data_series[j].append(data_table[i][j])
-    # plt.style.use("_mpl-gallery")
-
-    # make data
-    x = energies
-    # y = 4 + 1 * np.sin(2 * x)
-    print(data)
-    y = data
-    # x2 = np.linspace(0, 10, 25)
-    # y2 = 4 + 1 * np.sin(2 * x2)
-
-    # plot
     fig, ax = plt.subplots()
+    plt.yscale("log")
+    x = columns[0][1:]  # energies
+    plt.title(reaction_label)
+    plt.xlabel("E_Lab (MeV)")
+    plt.ylabel("Cross section for evaporation (mb)")
+    for column in columns[1:]:  # first is the energy column
+        # print(type(max(column[1:])))
 
-    # ax.plot(x2, y2 + 2.5, "x", markeredgewidth=2)
-    for serial in data_series:
-        print(serial)
-        ax.plot(x, serial, "x", markeredgewidth=2.0)
-    # ax.plot(x, y, "x", markeredgewidth=2.0)
-    # ax.plot(x, data2, "x", markeredgewidth=2.0)
-    # ax.plot(x2, y2 - 2.5, "o-", linewidth=2)
+        if max(column[1:]) == 0:
+            print(column[0], "zeroes")
+            continue
 
-    # ax.set(xlim=(0, 8), xticks=np.arange(1, 8), ylim=(0, 8), yticks=np.arange(1, 8))
-    # plt.yscale("log")
+        channel_dict = column[0]
+        y = np.array(column[1:])
+        ax.plot(
+            np.array(x),
+            # np.array(column[1:]),
+            np.where(y == 0, np.nan, y),
+            # np.where(y == 0, np.nan, y),
+            markers_table[
+                channel_dict["p"]
+            ],  # every residual element has a different marker
+            markeredgewidth=2.0,
+            linestyle="solid",
+            label=str(channel_dict["n"]) + "n" + str(channel_dict["p"]) + "p",
+        )
+        i += 1
+
+    plt.grid()
+    plt.tight_layout()
+    box = ax.get_position()
+    ax.set_position([box.x0, box.y0, box.width * 0.8, box.height])
+    ax.legend(loc="center left", bbox_to_anchor=(1.025, 0.5), title="EvR channels")
+
+    plt.savefig(output_filename)
     plt.show()
 
 
 if __name__ == "__main__":
     plot_data = extract_channels_energies_sigmas_from_file()
-    plot_experiment(plot_data)
+    reaction_label = extract_reaction_label_from_file()
+    plot_experiment(plot_data, reaction_label)
