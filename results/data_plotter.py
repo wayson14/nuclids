@@ -2,6 +2,7 @@ import matplotlib.pyplot as plt
 import periodictable as pt
 import re
 import numpy as np
+import sys
 
 
 # I'm not sure if it needs consideration between aphas and compond neutrons, so I have omitted alpha channel
@@ -130,6 +131,8 @@ def plot_experiment(
 
 
 if __name__ == "__main__":
-    plot_data = extract_channels_energies_sigmas_from_file()
-    reaction_label = extract_reaction_label_from_file()
-    plot_experiment(plot_data, reaction_label)
+    input_filename = sys.argv[1]
+    plot_filename = sys.argv[2]
+    plot_data = extract_channels_energies_sigmas_from_file(input_filename)
+    reaction_label = extract_reaction_label_from_file(input_filename)
+    plot_experiment(plot_data, reaction_label, plot_filename)
