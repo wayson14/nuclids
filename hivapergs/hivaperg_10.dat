@@ -1,0 +1,58 @@
+          Programm HIVAP,  Autor  W.Reisdorf   Version fuer "rzri6f" vom  7. 6. 1994
+
+           Bearbeitung F.P.Heßberger
+           
+(64)Ni+(208)Pb -> (272)Ds                                               
+           
+
+ Unterprogramm SEPENF
+ Q-Wert  -224.863 MeV
+ Massen aus der Datei "mlz.dat" 
+
+         Exp. Schaleneffekte,  SHELL0=   -1.20
+          110/271   110/272
+             -4.68     -4.80
+          Mt  270   Mt  271
+             -4.67     -4.86
+
+           BARFAC=   1.000      BAR0=   0.000
+
+          Separationsenergien (BN,BP,BA) und Spaltbarrieren
+          110/271   110/272
+              6.80      8.00
+              2.05      2.38
+            -10.87    -10.76
+              4.86      4.99
+             -0.66      0.00
+          Mt  270   Mt  271
+              6.73      7.68
+              1.14      1.30
+            -10.18     -9.91
+              4.94      5.13
+             -1.19     -0.74
+
+ benutzter Q-Wert  -224.863 MeV    effektiver Q-Wert  -224.863 MeV
+1     ENERGY   307.595     0.000
+
+Extra-Push Parameter: E_push =   58.90 MeV   x_eq_m= 0.853   xth= 0.720   Apush=15.000   E_ch=  14.762   xcn= 0.935   x_eq_eff= 0.778
+
+
+E_lab = 307.595 MeV    E* =  10.357 MeV   nicht gerechnet, SIGFUS kleiner als 1 nb
+
+
+1     ENERGY   308.916     0.000
+
+
+E_lab = 308.916 MeV    E* =  11.367 MeV   nicht gerechnet, SIGFUS kleiner als 1 nb
+
+
+1     ENERGY   311.466     0.000
+
+
+E_lab = 311.466 MeV    E* =  13.317 MeV   nicht gerechnet, SIGFUS kleiner als 1 nb
+
+
+
+
+
+ Ende HIVAP 
