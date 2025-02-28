@@ -1,0 +1,1280 @@
+          Programm HIVAP,  Autor  W.Reisdorf   Version fuer "rzri6f" vom  7. 6. 1994
+
+           Bearbeitung F.P.Heßberger
+           
+(48)Ca+(208)Pb -> (256)No                                               
+           
+
+ Unterprogramm SEPENF
+ Q-Wert  -153.796 MeV
+ Massen aus der Datei "mlz.dat" 
+
+         Exp. Schaleneffekte,  SHELL0=   -1.20
+          No  255   No  256
+             -4.36     -4.14
+          Md  254   Md  255
+             -4.16     -3.95
+
+           BARFAC=   1.000      BAR0=   0.000
+
+          Separationsenergien (BN,BP,BA) und Spaltbarrieren
+          No  255   No  256
+              5.99      7.06
+              3.94      4.31
+             -8.43     -8.58
+              5.67      5.48
+             -0.60      0.00
+          Md  254   Md  255
+              5.79      6.68
+              3.18      3.35
+             -7.80     -7.91
+              5.70      5.52
+             -1.09     -0.69
+
+ benutzter Q-Wert  -153.796 MeV    effektiver Q-Wert  -153.796 MeV
+1     ENERGY   213.500     0.000
+
+Extra-Push Parameter: E_push =    2.72 MeV   x_eq_m= 0.751   xth= 0.720   Apush=15.000   E_ch=  12.983   xcn= 0.862   x_eq_eff= 0.653
+  256.  102.   0.0010    21     1    25    25    35    12    12    20
+ DEL     1.0     0.1     0.0     0.0     0.0
+ TRANSM  APAR,ZPAR,SIGLOW,UNIT,DEL 256.0 102.0  0.10E-02  21     0.1     6.0    18.0
+ SEQIN:PAIR,DELT,CST   4  11.00   1.160 AL=  28.56  28.47  28.47  28.18  28.99 DELTA=  0.00 -0.60 -0.69  0.00  0.00
+ AF/AN=   1.100   BS,BK=   1.0378   1.0434 DPBAR=   1.29 A= 256. Z= 102. Y=   0.136
+ SHELL CORRECTIONS        -4.1    -4.4    -4.0    -4.4     0.0
+1 NEW ROW
+
+ GRIDS  NROW,NSTEP   1   1
+ SUMN,SUMLOW    0.2684E+01    0.0000E+00
+ SUMPOP FLOST,SUM,EXMAX,M,N  0.0000E+00  0.2684E+01   19.67   1  36
+ SUMPOP FLOST,SUM,EXMAX,M,N  0.0000E+00  0.2684E+01   19.67   1  36
+ CUTOFF   NSTEP,TOTAL,TRIM,TRIMJ,TRIME,TRIMLEV   1  0.2684E+01  0.0000E+00  0.0000E+00  0.0000E+00  0.0000E+00
+          ICUT,AMX,ALEVEL,IAGAIN   0  0.1529E+00  0.7465E-04  11    CUT,PRCNT  0.100E-07  0.100E+01  M1,N1=   1  36
+ CUTOFF OLD,NEW M1   1  20
+ DIMENSIONS  20  36    19.7  13  41    12.5  10  41     9.4  11  41    10.3
+ DENSTY: JSHAP= 97    JBAR= 99        98.0     2.0
+ EVA M1,N1=    20    36
+ NOP,NOA,NOF,NOG,KE2MX= 0 0 0 016  NOLEP,NOLJI,NOLJF,JFJI= 1 1 1 1
+
+ EVA  M1*N1   720    ZEROS   140    CUTS   263    CUTPOP  0.1342E-07    SUM CUTS  0.4203E-06
+ LOSS BELOW YRAST LINE  0.0000E+00
+ EVA-,STEP  1
+ SEQOUT NROW,NSTEP   1   1         PARENT 256No      ELAB   213.5    EXCIT    19.7
+
+ SUMP,SUMLOW    0.3211E-05    0.0000E+00
+ WROTE POPP ON UNIT  10               255Md  
+ SUMA,SUMLOW    0.2822E-05    0.0000E+00
+ WROTE POPA ON UNIT  12               252Fm  
+ TOTAL    0.2684E+01
+ FLOST(SUMPOP),TRIM(CUTOFF),RLOST(POPUL),RP 
+   0.0000E+00   0.4203E-06   0.0000E+00   0.0000E+00   0.0000E+00   0.0000E+00   0.0000E+00
+
+ J SPECTRUM OF PARENT 256No  
+    AVERAGE=  13.046    SUM=   0.268E+01
+    0.00     36    109    180    247    311    369    421    467    504    533
+   10.00    554    566    569    564    550    529    501    467    429    388
+   20.00    344    300    255    208    169    131     98     71     46     30
+   30.00     19      8      5      2      0      0
+
+ J SPECTRUM OF FISS   256No  
+    AVERAGE=  13.108    SUM=   0.258E+01
+    0.00     36    107    177    244    307    365    417    462    500    530
+   10.00    551    564    567    562    550    529    502    470    432    391
+   20.00    348    304    259    212    172    134    100     73     47     31
+   30.00     19      9      5      2      0      0
+
+ E SPECTRUM OF PARENT 256No  
+    AVERAGE=  19.673    SUM=   0.268E+01
+   10.67      0      0      0      0      0      0      0      0      0  10000
+
+ DJN SPEC
+    AVERAGE=  -0.544    SUM=   0.108E+00
+   -1.00   5441   4558      0      0      0      0      0      0      0      0
+
+ DJP SPEC
+    AVERAGE=  -0.468    SUM=   0.321E-05
+   -1.00   4677   5322      0      0      0      0      0      0      0      0
+
+ DJA SPEC
+    AVERAGE=  -1.592    SUM=   0.282E-05
+   -9.00      0      0      0      0      0      0   2456   2814   2921   1807
+
+   N   M   EXMAX  AV.EX. NW  MW  EXMAXW      Q      AL   DELTA     AVJ      DJ        TOTAL  BRANCH
+  36  20    19.7    19.7  38  19    18.7    0.00   28.56    0.00   13.05    0.00     0.268E+01 10000    
+  41  13    12.5    11.2  42  13    12.5   -7.06   28.47   -0.60   11.02    2.02     0.108E+00   403   N
+  41  10     9.4     6.5  42  10     9.4   -4.31   28.47   -0.69    9.93    3.12     0.321E-05     0   P
+  41  11    10.3     7.5  42  11    10.3    8.58   28.18    0.00    9.69    3.36     0.282E-05     0   A
+                    19.7  36  20    19.7   -5.48   28.99    0.00   13.11             0.258E+01  9597   F
+                                                                                     0.000E+00     0   G
+
+ SPECTRA N,P,A  AVE    1.46    8.91   20.77         SUMS  0.1089E+00  0.3208E-05  0.2794E-05
+ SEQIN:PAIR,DELT,CST   4  11.00   1.160 AL=  28.47  28.37  28.37  28.09  28.89 DELTA= -0.60  0.00 -1.09 -0.57 -0.60
+ AF/AN=   1.100   BS,BK=   1.0371   1.0426 DPBAR=   1.26 A= 255. Z= 102. Y=   0.135
+ SHELL CORRECTIONS        -4.4    -4.6    -4.2    -4.3     0.0
+
+ GRIDS  NROW,NSTEP   1   2
+ SUMN,SUMLOW    0.1082E+00    0.0000E+00
+ SUMPOP FLOST,SUM,EXMAX,M,N  0.0000E+00  0.1082E+00   12.52  13  41
+ SUMPOP FLOST,SUM,EXMAX,M,N  0.0000E+00  0.1082E+00   12.52  13  41
+ CUTOFF   NSTEP,TOTAL,TRIM,TRIMJ,TRIME,TRIMLEV   2  0.1082E+00  0.0000E+00  0.0000E+00  0.0000E+00  0.0000E+00
+          ICUT,AMX,ALEVEL,IAGAIN   0  0.6399E-02  0.3051E-08  21    CUT,PRCNT  0.100E-06  0.100E+01  M1,N1=  13  35
+ DIMENSIONS  13  35    12.5   7  36     6.4   3  23     2.6   3  24     2.9
+ DENSTY: JSHAP= 97    JBAR= 99        98.0     2.0
+ EVA M1,N1=    13    35
+ NOP,NOA,NOF,NOG,KE2MX= 0 0 0 016  NOLEP,NOLJI,NOLJF,JFJI= 1 1 1 1
+
+ EVA  M1*N1   455    ZEROS    70    CUTS     0    CUTPOP  0.5409E-09    SUM CUTS  0.0000E+00
+ LOSS BELOW YRAST LINE  0.0000E+00
+ EVA-,STEP  2
+ SEQOUT NROW,NSTEP   1   2         PARENT 255No      ELAB   213.5    EXCIT    19.7
+
+ SUMP,SUMLOW    0.3229E-08    0.0000E+00
+ WROTE POPP ON UNIT  10               254Md  
+ SUMA,SUMLOW    0.4417E-08    0.0000E+00
+ WROTE POPA ON UNIT  12               251Fm  
+ TOTAL    0.1082E+00
+ FLOST(SUMPOP),TRIM(CUTOFF),RLOST(POPUL),RP 
+   0.0000E+00   0.0000E+00   0.0000E+00   0.0000E+00   0.0000E+00   0.0000E+00   0.0000E+00
+
+ J SPECTRUM OF PARENT 255No  
+    AVERAGE=  11.022    SUM=   0.108E+00
+    0.00     48    145    238    324    402    470    526    569    599    615
+   10.00   1241    612    589    555    514    466    414    360    306    254
+   20.00    206    162    121     89     62     42     27     15      8      4
+   30.00      1      0      0      0      0
+
+ J SPECTRUM OF FISS   255No  
+    AVERAGE=  11.075    SUM=   0.105E+00
+    0.00     48    143    234    320    397    465    521    565    596    614
+   10.00   1237    612    589    557    516    469    418    364    310    258
+   20.00    209    165    124     91     64     43     27     15      9      4
+   30.00      1      0      0      0      0
+
+ E SPECTRUM OF PARENT 255No  
+    AVERAGE=  11.156    SUM=   0.108E+00
+    0.52      0      0      0      0      0      3     16     68    256    849
+   10.52   2380   4792   1631
+
+ DJN SPEC
+    AVERAGE=  -0.347    SUM=   0.318E-02
+   -1.00   3470   6529      0      0      0      0      0      0      0      0
+
+ DJP SPEC
+    AVERAGE=  -0.208    SUM=   0.323E-08
+   -1.00   2079   7920      0      0      0      0      0      0      0      0
+
+ DJA SPEC
+    AVERAGE=  -1.160    SUM=   0.442E-08
+   -9.00      0      0      0      0      0      0    855   2449   4133   2562
+
+   N   M   EXMAX  AV.EX. NW  MW  EXMAXW      Q      AL   DELTA     AVJ      DJ        TOTAL  BRANCH
+  35  13    12.5    11.2  37  12    11.5    0.00   28.47   -0.60   11.02    0.00     0.108E+00 10000    
+  36   7     6.4     4.3  36   7     6.4   -5.99   28.37    0.00    8.77    2.25     0.318E-02   294   N
+  23   3     2.6     1.3  23   3     2.6   -3.94   28.37   -1.09    7.48    3.54     0.323E-08     0   P
+  24   3     2.9     1.7  24   3     2.9    8.43   28.09   -0.57    7.72    3.30     0.442E-08     0   A
+                    11.1  35  13    12.5   -5.67   28.89   -0.60   11.07             0.105E+00  9678   F
+                                                                                     0.295E-03    27   G
+
+ SPECTRA N,P,A  AVE    0.93    6.71   18.46         SUMS  0.3479E-02  0.3155E-08  0.3968E-08
+1    ROW  1      ELEMENT No      X-SECTION   0.295E-03
+(48)Ca+(208)Pb -> (256)No                                               
+ ELAB(MEV)  213.500     Q-VALUE -153.796    EXCIT   19.673
+ SIGFUS,SIGEVA,SIGFIS,SIGMXZ  0.2684E+01  0.2951E-03  0.2681E+01  0.2951E-03
+ ZT= 82    AT 208    ZP 20    AP  48
+
+
+             256No     255No  
+ SIG        0.000E+00 0.295E-03
+ B-G               0        27
+  R-N            403       294
+ BR-P              0         0
+ BR-A              0         0
+ BR-F           9597      9678
+ SIGF       0.258E+01 0.105E+00
+ TOTAL      0.268E+01 0.108E+00
+ EXCP           19.7      11.2
+ SPINP          13.0      11.0
+ EXCF           19.7      11.1
+ SPINF          13.1      11.1
+ DJN           -0.54     -0.35
+ DJP           -0.47     -0.21
+ DJA           -1.59     -1.16
+ AV.E N         1.46      0.93
+ AV.E P         8.91      6.71
+ AV.E A        20.77     18.46
+ SUM GAM         0.0       5.6
+ SPIN GAM        0.0      12.4
+
+ TRIM       0.420E-06 0.000E+00
+ FLOST      0.000E+00 0.000E+00
+ RP         0.000E+00 0.000E+00
+ RLOSTG     0.000E+00 0.000E+00
+ RLOSTN     0.000E+00 0.000E+00
+ RLOSTP     0.000E+00 0.000E+00
+ RLOSTA     0.000E+00 0.000E+00
+ TIME              0         0
+
+ STORAGE
+  1.  1.
+  0.  0.
+  255.  101.   0.0010    21     1    25    25    35    12    12    20
+ DEL     1.0     0.1     6.0    18.0     0.0
+ TRANSM  APAR,ZPAR,SIGLOW,UNIT,DEL 255.0 101.0  0.10E-02  21     0.1     6.0    17.0
+ SEQIN:PAIR,DELT,CST   4  11.00   1.160 AL=  28.47  28.37  28.37  28.09  28.97 DELTA= -0.69 -1.09  0.00 -0.73 -0.69
+ AF/AN=   1.100   BS,BK=   1.0438   1.0508 DPBAR=   1.60 A= 255. Z= 101. Y=   0.147
+ SHELL CORRECTIONS        -4.0    -4.2    -3.8    -4.1     0.0
+1 NEW ROW
+
+ GRIDS  NROW,NSTEP   2   1
+ SUMN,SUMLOW    0.0000E+00    0.0000E+00
+ GOT POPP FROM UNIT  10      SUMP  0.3211E-05   M,N,EXMAX  10  41     9.4     255Md      CN= 256No  
+ SUMPOP FLOST,SUM,EXMAX,M,N  0.0000E+00  0.3211E-05    9.36  10  41
+ SUMPOP FLOST,SUM,EXMAX,M,N  0.0000E+00  0.3211E-05    9.36  10  41
+ CUTOFF   NSTEP,TOTAL,TRIM,TRIMJ,TRIME,TRIMLEV   1  0.3211E-05  0.3033E-12  0.0000E+00  0.0000E+00  0.3033E-12
+          ICUT,AMX,ALEVEL,IAGAIN   2  0.1151E-06  0.2196E-12  19    CUT,PRCNT  0.100E-06  0.100E+01  M1,N1=  10  35
+ DIMENSIONS  10  35     9.4   3  23     2.6   1   2     0.0   1   8     0.3
+ DENSTY: JSHAP= 97    JBAR= 99        98.0     2.0
+ EVA M1,N1=    10    35
+ NOP,NOA,NOF,NOG,KE2MX= 0 0 0 016  NOLEP,NOLJI,NOLJF,JFJI= 1 1 1 1
+
+ EVA  M1*N1   350    ZEROS    74    CUTS     0    CUTPOP  0.1606E-13    SUM CUTS  0.0000E+00
+ LOSS BELOW YRAST LINE  0.0000E+00
+ EVA-,STEP  1
+ SEQOUT NROW,NSTEP   2   1         PARENT 255Md      ELAB   213.5    EXCIT    19.7
+
+ SUMP,SUMLOW    0.1285E-18    0.0000E+00
+ WROTE POPP ON UNIT  11               254Fm  
+ SUMA,SUMLOW    0.3652E-15    0.0000E+00
+ WROTE POPA ON UNIT  13               251Es  
+ TOTAL    0.3211E-05
+ FLOST(SUMPOP),TRIM(CUTOFF),RLOST(POPUL),RP 
+   0.0000E+00   0.3033E-12   0.0000E+00   0.0000E+00   0.0000E+00   0.0000E+00   0.0000E+00
+
+ J SPECTRUM OF PARENT 255Md  
+    AVERAGE=   9.928    SUM=   0.321E-05
+    0.00     62    183    299    404    495    569    626    662    680    678
+   10.00   1326    631    584    528    466    401    337    276    220    171
+   20.00    128     93     64     43     27     16      9      4      2      1
+
+ J SPECTRUM OF FISS   255Md  
+    AVERAGE=   9.723    SUM=   0.184E-05
+    0.00     66    194    313    418    509    582    635    670    686    686
+   10.00   1331    637    594    538    477    413    349    288    161    129
+   20.00     99     74     52     36     24     15      4      2      1      0
+
+ E SPECTRUM OF PARENT 255Md  
+    AVERAGE=   6.448    SUM=   0.321E-05
+    0.36      0      9     65    304    949   1965   2696   2391   1269    347
+
+ DJN SPEC
+    AVERAGE=  -0.155    SUM=   0.237E-07
+   -1.00   1550   8449      0      0      0      0      0      0      0      0
+
+ DJP SPEC
+    AVERAGE=   0.000    SUM=   0.128E-18
+   -1.00      0  10000      0      0      0      0      0      0      0      0
+
+ DJA SPEC
+    AVERAGE=  -0.446    SUM=   0.365E-15
+   -9.00      0      0      0      0      0      0      0      0   4459   5540
+
+   N   M   EXMAX  AV.EX. NW  MW  EXMAXW      Q      AL   DELTA     AVJ      DJ        TOTAL  BRANCH
+  35  10     9.4     6.4  37   9     8.4    0.00   28.47   -0.69    9.93    0.00     0.321E-05 10000    
+  23   3     2.6     1.2  23   3     2.6   -6.68   28.37   -1.09    7.08    2.85     0.237E-07    74   N
+   2   1     0.0     0.0   2   1     0.0   -3.35   28.37    0.00    0.62    9.31     0.128E-18     0   P
+   8   1     0.3     0.3   8   1     0.3    7.91   28.09   -0.73    4.51    5.42     0.365E-15     0   A
+                     7.3  35  10     9.4   -5.52   28.97   -0.69    9.72             0.184E-05  5715   F
+                                                                                     0.135E-05  4211   G
+
+ SPECTRA N,P,A  AVE    0.37    6.00   17.00         SUMS  0.4000E-07  0.9635E-19  0.2739E-15
+ SEQIN:PAIR,DELT,CST   4  11.00   1.160 AL=  28.37  28.28  28.28  28.00  28.86 DELTA= -1.09 -0.61 -0.55 -1.04 -1.09
+ AF/AN=   1.100   BS,BK=   1.0430   1.0498 DPBAR=   1.56 A= 254. Z= 101. Y=   0.146
+ SHELL CORRECTIONS        -4.2    -4.5    -4.1    -3.9     0.0
+
+ GRIDS  NROW,NSTEP   2   2
+ SUMN,SUMLOW    0.2369E-07    0.1352E-12
+ GOT POPP FROM UNIT  10      SUMP  0.3229E-08   M,N,EXMAX   3  23     2.6     254Md      CN= 256No  
+ SUMPOP FLOST,SUM,EXMAX,M,N  0.1654E-22  0.2692E-07    2.58   3  23  0.3229E-08    2.58   3  23  0.2369E-07    2.58   3  23  0  0
+ SUMPOP FLOST,SUM,EXMAX,M,N  0.0000E+00  0.2692E-07    2.58   3  23
+ CUTOFF   NSTEP,TOTAL,TRIM,TRIMJ,TRIME,TRIMLEV   2  0.2692E-07  0.0000E+00  0.0000E+00  0.0000E+00  0.0000E+00
+          ICUT,AMX,ALEVEL,IAGAIN   0  0.3114E-08  0.1521E-11  11    CUT,PRCNT  0.100E-06  0.100E+01  M1,N1=   3  23
+ DIMENSIONS   3  23     2.6   1   1    -3.3   1   1    -6.6   1   1    -6.6
+ DENSTY: JSHAP= 97    JBAR= 99        98.0     2.0
+ EVA M1,N1=     3    23
+ NOP,NOA,NOF,NOG,KE2MX= 0 0 0 016  NOLEP,NOLJI,NOLJF,JFJI= 1 1 1 1
+
+ EVA  M1*N1    69    ZEROS    17    CUTS     0    CUTPOP  0.1346E-15    SUM CUTS  0.0000E+00
+ LOSS BELOW YRAST LINE  0.0000E+00
+ EVA-,STEP  2
+ SEQOUT NROW,NSTEP   2   2         PARENT 254Md      ELAB   213.5    EXCIT    19.7
+
+ SUMP,SUMLOW    0.0000E+00    0.1352E-12
+ SUMA,SUMLOW    0.0000E+00    0.1352E-12
+ TOTAL    0.2692E-07
+ FLOST(SUMPOP),TRIM(CUTOFF),RLOST(POPUL),RP 
+   0.1654E-22   0.0000E+00   0.0000E+00   0.0000E+00   0.0000E+00   0.0000E+00   0.0000E+00
+
+ J SPECTRUM OF PARENT 254Md  
+    AVERAGE=   7.125    SUM=   0.269E-07
+    0.00    111    325    520    685    811    895    934    931    890    820
+   10.00   2203    215    182    148    116     87     63     43      5      3
+   20.00      2      1      0
+
+ J SPECTRUM OF FISS   254Md  
+
+ E SPECTRUM OF PARENT 254Md  
+    AVERAGE=   1.171    SUM=   0.269E-07
+    0.58   5003   4078    917
+
+ DJN SPEC
+
+ DJP SPEC
+
+ DJA SPEC
+
+   N   M   EXMAX  AV.EX. NW  MW  EXMAXW      Q      AL   DELTA     AVJ      DJ        TOTAL  BRANCH
+  23   3     2.6     1.2  18   2     1.6    0.00   28.37   -1.09    7.13    0.00     0.269E-07 10000    
+   1   1    -3.3     0.0   1   1    -3.3   -5.79   28.28   -0.61    4.51    2.62     0.000E+00     0   N
+   1   1    -6.6     0.0   1   1    -6.6   -3.18   28.28   -0.55    4.51    2.62     0.000E+00     0   P
+   1   1    -6.6     0.0   1   1    -6.6    7.80   28.00   -1.04    4.51    2.62     0.000E+00     0   A
+                     0.0   1   3     2.6   -5.70   28.86   -1.09    0.00             0.000E+00     0   F
+                                                                                     0.269E-07 10000   G
+
+ SPECTRA N,P,A  AVE    0.00    0.00    0.00         SUMS  0.0000E+00  0.0000E+00  0.0000E+00
+1    ROW  2      ELEMENT Md      X-SECTION   0.138E-05
+(48)Ca+(208)Pb -> (256)No                                               
+ ELAB(MEV)  213.500     Q-VALUE -153.796    EXCIT   19.673
+ SIGFUS,SIGEVA,SIGFIS,SIGMXZ  0.2684E+01  0.2965E-03  0.2681E+01  0.2951E-03
+ ZT= 82    AT 208    ZP 20    AP  48
+
+
+             255Md     254Md  
+ SIG        0.135E-05 0.269E-07
+ B-G            4211     10000
+  R-N             74         0
+ BR-P              0         0
+ BR-A              0         0
+ BR-F           5715         0
+ SIGF       0.184E-05 0.000E+00
+ TOTAL      0.321E-05 0.269E-07
+ EXCP            6.4       1.2
+ SPINP           9.9       7.1
+ EXCF            7.3       0.0
+ SPINF           9.7       0.0
+ DJN           -0.16      0.00
+ DJP            0.00      0.00
+ DJA           -0.45      0.00
+ AV.E N         0.37      0.00
+ AV.E P         6.00      0.00
+ AV.E A        17.00      0.00
+ SUM GAM         4.9       1.2
+ SPIN GAM       10.1       7.1
+
+ TRIM       0.303E-12 0.000E+00
+ FLOST      0.000E+00 0.165E-22
+ RP         0.000E+00 0.000E+00
+ RLOSTG     0.000E+00 0.000E+00
+ RLOSTN     0.000E+00 0.000E+00
+ RLOSTP     0.000E+00 0.000E+00
+ RLOSTA     0.000E+00 0.000E+00
+ TIME              0         0
+
+ STORAGE
+  1.  0.
+  0.  0.
+1     ENERGY   213.500     0.000
+
+ HIVAP  ENGOUT
+
+(48)Ca+(208)Pb -> (256)No                                               
+    ELAB=   213.5      EXCIT=    19.7      CN= 256No  
+    FUSION X-SECT=  0.2684E+01      LCRIT=   9.0
+    EVAP SO FAR  0.2965E-03      FISSION  0.2681E+01
+
+ MASS DISTRIBUTION
+        6           5           4           3           2                 1           0           9           8           7
+ 256  0.0000E+00  0.2965E-03  0.2692E-07  0.0000E+00
+
+ Z-DISTIBUTION
+    Md         No  
+  0.138E-05  0.295E-03
+
+  CROSS SECTIONS (MB)
+  255No      256No  
+  0.295E-03  0.000E+00
+  254Md      255Md  
+  0.269E-07  0.135E-05
+
+ AVERAGE Z,DELTAZ,FWHMZ SO FAR  102.00    0.00    0.00
+ AVERAGE A,DELTAA,FWHMA SO FAR  255.00    1.00    0.02
+
+
+ SPECTRUM G
+    AVERAGE=   2.682    SUM=   0.415E-02
+    0.00      0   2216   2964   2301   1380    698    312    125      0      0
+ SPECTRUM G
+    AVERAGE=   0.098    SUM=   0.178E-02
+    0.00   9574    171     56     96    101      0      0      0      0      0
+ SPECTRUM N
+    AVERAGE=   1.441    SUM=   0.112E+00
+    0.10   1686   4809   2345    827    247     64     15      3      0      0
+ SPECTRUM P
+    AVERAGE=   8.909    SUM=   0.321E-05
+    0.00      0      0      0      0      0      0    350   1273   2390   2693
+   10.00   1963    948    304     65      9      0      0      0      0      0
+ SPECTRUM A
+    AVERAGE=  20.766    SUM=   0.280E-05
+   10.00      0      0      0      0      0      0      0      0    924   1578
+   20.00   2076   2126   1689   1015    436    125     23      2      0      0
+ SPECTRUM F
+    AVERAGE=   0.332    SUM=   0.485E+01
+    0.00   7474   1911    471    111     24      5      1      0      0      0
+
+ HALFLIFE FIRST STEP IN UNITS OF 10**(-22) SEC AS FUNTION OF J
+   0.103E+04   0.333E+03   0.333E+03   0.332E+03   0.331E+03   0.330E+03   0.328E+03   0.326E+03   0.324E+03   0.321E+03
+   0.319E+03   0.315E+03   0.312E+03   0.308E+03   0.303E+03   0.299E+03   0.294E+03   0.289E+03   0.283E+03   0.278E+03
+   0.271E+03   0.265E+03   0.258E+03   0.250E+03   0.242E+03   0.234E+03   0.226E+03   0.217E+03   0.208E+03   0.198E+03
+   0.188E+03   0.178E+03   0.168E+03   0.158E+03   0.147E+03   0.136E+03   0.000E+00   0.000E+00   0.000E+00   0.000E+00
+   0.000E+00   0.000E+00
+1     ENERGY   216.700     0.000
+  256.  102.   0.0010    21     1    25    25    35    12    12    20
+ DEL     1.0     0.1     6.0    17.0     0.0
+ TRANSM  APAR,ZPAR,SIGLOW,UNIT,DEL 256.0 102.0  0.10E-02  21     0.1     6.0    18.0
+ SEQIN:PAIR,DELT,CST   4  11.00   1.160 AL=  28.56  28.47  28.47  28.18  28.99 DELTA=  0.00 -0.60 -0.69  0.00  0.00
+ AF/AN=   1.100   BS,BK=   1.0378   1.0434 DPBAR=   1.29 A= 256. Z= 102. Y=   0.136
+ SHELL CORRECTIONS        -4.1    -4.4    -4.0    -4.4     0.0
+1 NEW ROW
+
+ GRIDS  NROW,NSTEP   1   1
+ SUMN,SUMLOW    0.9820E+01    0.0000E+00
+ SUMPOP FLOST,SUM,EXMAX,M,N  0.0000E+00  0.9820E+01   22.27   1  40
+ SUMPOP FLOST,SUM,EXMAX,M,N  0.0000E+00  0.9820E+01   22.27   1  40
+ CUTOFF   NSTEP,TOTAL,TRIM,TRIMJ,TRIME,TRIMLEV   1  0.9820E+01  0.0000E+00  0.0000E+00  0.0000E+00  0.0000E+00
+          ICUT,AMX,ALEVEL,IAGAIN   0  0.4963E+00  0.1212E-03  12    CUT,PRCNT  0.100E-07  0.100E+01  M1,N1=   1  40
+ CUTOFF OLD,NEW M1   1  23
+ DIMENSIONS  23  40    22.3  16  45    15.1  12  45    12.0  13  45    12.9
+ DENSTY: JSHAP= 97    JBAR= 99        98.0     2.0
+ EVA M1,N1=    23    40
+ NOP,NOA,NOF,NOG,KE2MX= 0 0 0 016  NOLEP,NOLJI,NOLJF,JFJI= 1 1 1 1
+
+ EVA  M1*N1   920    ZEROS   302    CUTS   292    CUTPOP  0.4910E-07    SUM CUTS  0.1868E-05
+ LOSS BELOW YRAST LINE  0.0000E+00
+ EVA-,STEP  1
+ SEQOUT NROW,NSTEP   1   1         PARENT 256No      ELAB   216.7    EXCIT    22.3
+
+ SUMP,SUMLOW    0.2376E-04    0.0000E+00
+ WROTE POPP ON UNIT  10               255Md  
+ SUMA,SUMLOW    0.1926E-04    0.0000E+00
+ WROTE POPA ON UNIT  12               252Fm  
+ TOTAL    0.9820E+01
+ FLOST(SUMPOP),TRIM(CUTOFF),RLOST(POPUL),RP 
+   0.0000E+00   0.1868E-05   0.0000E+00   0.0000E+00   0.0000E+00   0.0000E+00   0.0000E+00
+
+ J SPECTRUM OF PARENT 256No  
+    AVERAGE=  14.942    SUM=   0.982E+01
+    0.00     27     81    135    187    236    284    327    367    403    434
+   10.00    459    479    494    502    505    502    492    478    458    433
+   20.00    405    373    338    301    265    225    191    159    125     99
+   30.00     74     54     37     24     14      8      3      1      0      0
+
+ J SPECTRUM OF FISS   256No  
+    AVERAGE=  15.021    SUM=   0.941E+01
+    0.00     26     80    133    184    233    280    323    363    399    430
+   10.00    456    476    491    500    503    501    492    478    459    435
+   20.00    407    376    342    305    269    229    195    162    128    102
+   30.00     76     56     38     25     14      8      3      1      0      0
+
+ E SPECTRUM OF PARENT 256No  
+    AVERAGE=  22.273    SUM=   0.982E+01
+   20.27      0      0  10000
+
+ DJN SPEC
+    AVERAGE=  -0.626    SUM=   0.405E+00
+   -1.00   6260   3739      0      0      0      0      0      0      0      0
+
+ DJP SPEC
+    AVERAGE=  -0.556    SUM=   0.238E-04
+   -1.00   5559   4440      0      0      0      0      0      0      0      0
+
+ DJA SPEC
+    AVERAGE=  -1.811    SUM=   0.193E-04
+   -9.00      0      0      0      0      0      0   3404   2714   2463   1417
+
+   N   M   EXMAX  AV.EX. NW  MW  EXMAXW      Q      AL   DELTA     AVJ      DJ        TOTAL  BRANCH
+  40  23    22.3    22.3  42  22    21.3    0.00   28.56    0.00   14.94    0.00     0.982E+01 10000    
+  45  16    15.1    13.6  46  16    15.1   -7.06   28.47   -0.60   12.48    2.46     0.405E+00   413   N
+  45  12    12.0     8.6  46  12    12.0   -4.31   28.47   -0.69   11.24    3.70     0.238E-04     0   P
+  45  13    12.9     9.5  46  13    12.9    8.58   28.18    0.00   10.98    3.97     0.193E-04     0   A
+                    22.3  40  23    22.3   -5.48   28.99    0.00   15.02             0.941E+01  9587   F
+                                                                                     0.000E+00     0   G
+
+ SPECTRA N,P,A  AVE    1.57    9.36   21.36         SUMS  0.4060E+00  0.2374E-04  0.1915E-04
+ SEQIN:PAIR,DELT,CST   4  11.00   1.160 AL=  28.47  28.37  28.37  28.09  28.89 DELTA= -0.60  0.00 -1.09 -0.57 -0.60
+ AF/AN=   1.100   BS,BK=   1.0371   1.0426 DPBAR=   1.26 A= 255. Z= 102. Y=   0.135
+ SHELL CORRECTIONS        -4.4    -4.6    -4.2    -4.3     0.0
+
+ GRIDS  NROW,NSTEP   1   2
+ SUMN,SUMLOW    0.4054E+00    0.0000E+00
+ SUMPOP FLOST,SUM,EXMAX,M,N  0.0000E+00  0.4054E+00   15.12  16  45
+ SUMPOP FLOST,SUM,EXMAX,M,N  0.0000E+00  0.4054E+00   15.12  16  45
+ CUTOFF   NSTEP,TOTAL,TRIM,TRIMJ,TRIME,TRIMLEV   2  0.4054E+00  0.0000E+00  0.0000E+00  0.0000E+00  0.0000E+00
+          ICUT,AMX,ALEVEL,IAGAIN   0  0.2017E-01  0.9618E-08  21    CUT,PRCNT  0.100E-06  0.100E+01  M1,N1=  16  39
+ DIMENSIONS  16  39    15.1  10  42     9.0   6  32     5.2   6  33     5.5
+ DENSTY: JSHAP= 97    JBAR= 99        98.0     2.0
+ EVA M1,N1=    16    39
+ NOP,NOA,NOF,NOG,KE2MX= 0 0 0 016  NOLEP,NOLJI,NOLJF,JFJI= 1 1 1 1
+
+ EVA  M1*N1   624    ZEROS   112    CUTS     8    CUTPOP  0.2027E-08    SUM CUTS  0.3516E-08
+ LOSS BELOW YRAST LINE  0.0000E+00
+ EVA-,STEP  2
+ SEQOUT NROW,NSTEP   1   2         PARENT 255No      ELAB   216.7    EXCIT    22.3
+
+ SUMP,SUMLOW    0.7655E-07    0.0000E+00
+ WROTE POPP ON UNIT  10               254Md  
+ SUMA,SUMLOW    0.6629E-07    0.0000E+00
+ WROTE POPA ON UNIT  12               251Fm  
+ TOTAL    0.4054E+00
+ FLOST(SUMPOP),TRIM(CUTOFF),RLOST(POPUL),RP 
+   0.0000E+00   0.3516E-08   0.0000E+00   0.0000E+00   0.0000E+00   0.0000E+00   0.0000E+00
+
+ J SPECTRUM OF PARENT 255No  
+    AVERAGE=  12.483    SUM=   0.405E+00
+    0.00     37    111    184    252    316    374    425    467    501    526
+   10.00   1096    561    558    546    526    498    464    426    383    339
+   20.00    295    251    208    170    133    103     78     55     39     26
+   30.00     16     10      5      2      1      0      0      0      0
+
+ J SPECTRUM OF FISS   255No  
+    AVERAGE=  12.549    SUM=   0.393E+00
+    0.00     36    110    181    249    312    369    420    462    497    523
+   10.00   1091    559    557    545    526    500    467    429    387    343
+   20.00    299    255    212    173    136    106     80     57     40     26
+   30.00     17     10      5      2      1      0      0      0      0
+
+ E SPECTRUM OF PARENT 255No  
+    AVERAGE=  13.644    SUM=   0.405E+00
+    0.12      0      0      0      0      0      0      0      1      7     29
+   10.12    103    339    998   2509   4581   1428
+
+ DJN SPEC
+    AVERAGE=  -0.447    SUM=   0.127E-01
+   -1.00   4465   5534      0      0      0      0      0      0      0      0
+
+ DJP SPEC
+    AVERAGE=  -0.350    SUM=   0.765E-07
+   -1.00   3496   6503      0      0      0      0      0      0      0      0
+
+ DJA SPEC
+    AVERAGE=  -1.386    SUM=   0.663E-07
+   -9.00      0      0      0      0      0      0   1662   2586   3700   2050
+
+   N   M   EXMAX  AV.EX. NW  MW  EXMAXW      Q      AL   DELTA     AVJ      DJ        TOTAL  BRANCH
+  39  16    15.1    13.6  41  15    14.1    0.00   28.47   -0.60   12.48    0.00     0.405E+00 10000    
+  42  10     9.0     6.6  42  10     9.0   -5.99   28.37    0.00    9.98    2.50     0.127E-01   314   N
+  32   6     5.2     2.6  32   6     5.2   -3.94   28.37   -1.09    8.74    3.75     0.765E-07     0   P
+  33   6     5.5     3.3  33   6     5.5    8.43   28.09   -0.57    8.77    3.72     0.663E-07     0   A
+                    13.6  39  16    15.1   -5.67   28.89   -0.60   12.55             0.393E+00  9685   F
+                                                                                     0.748E-04     2   G
+
+ SPECTRA N,P,A  AVE    1.13    7.65   19.23         SUMS  0.1325E-01  0.7614E-07  0.6337E-07
+1    ROW  1      ELEMENT No      X-SECTION   0.748E-04
+(48)Ca+(208)Pb -> (256)No                                               
+ ELAB(MEV)  216.700     Q-VALUE -153.796    EXCIT   22.273
+ SIGFUS,SIGEVA,SIGFIS,SIGMXZ  0.9820E+01  0.7478E-04  0.9807E+01  0.7478E-04
+ ZT= 82    AT 208    ZP 20    AP  48
+
+
+             256No     255No  
+ SIG        0.000E+00 0.748E-04
+ B-G               0         2
+  R-N            413       314
+ BR-P              0         0
+ BR-A              0         0
+ BR-F           9587      9685
+ SIGF       0.941E+01 0.393E+00
+ TOTAL      0.982E+01 0.405E+00
+ EXCP           22.3      13.6
+ SPINP          14.9      12.5
+ EXCF           22.3      13.6
+ SPINF          15.0      12.5
+ DJN           -0.63     -0.45
+ DJP           -0.56     -0.35
+ DJA           -1.81     -1.39
+ AV.E N         1.57      1.13
+ AV.E P         9.36      7.65
+ AV.E A        21.36     19.23
+ SUM GAM         0.0       5.9
+ SPIN GAM        0.0      15.8
+
+ TRIM       0.187E-05 0.352E-08
+ FLOST      0.000E+00 0.000E+00
+ RP         0.000E+00 0.000E+00
+ RLOSTG     0.000E+00 0.000E+00
+ RLOSTN     0.000E+00 0.000E+00
+ RLOSTP     0.000E+00 0.000E+00
+ RLOSTA     0.000E+00 0.000E+00
+ TIME              0         0
+
+ STORAGE
+  1.  1.
+  0.  0.
+  255.  101.   0.0010    21     1    25    25    35    12    12    20
+ DEL     1.0     0.1     6.0    18.0     0.0
+ TRANSM  APAR,ZPAR,SIGLOW,UNIT,DEL 255.0 101.0  0.10E-02  21     0.1     6.0    17.0
+ SEQIN:PAIR,DELT,CST   4  11.00   1.160 AL=  28.47  28.37  28.37  28.09  28.97 DELTA= -0.69 -1.09  0.00 -0.73 -0.69
+ AF/AN=   1.100   BS,BK=   1.0438   1.0508 DPBAR=   1.60 A= 255. Z= 101. Y=   0.147
+ SHELL CORRECTIONS        -4.0    -4.2    -3.8    -4.1     0.0
+1 NEW ROW
+
+ GRIDS  NROW,NSTEP   2   1
+ SUMN,SUMLOW    0.0000E+00    0.0000E+00
+ GOT POPP FROM UNIT  10      SUMP  0.2376E-04   M,N,EXMAX  12  45    12.0     255Md      CN= 256No  
+ SUMPOP FLOST,SUM,EXMAX,M,N  0.0000E+00  0.2376E-04   11.96  12  45
+ SUMPOP FLOST,SUM,EXMAX,M,N  0.0000E+00  0.2376E-04   11.96  12  45
+ CUTOFF   NSTEP,TOTAL,TRIM,TRIMJ,TRIME,TRIMLEV   1  0.2376E-04  0.1233E-11  0.0000E+00  0.0000E+00  0.1233E-11
+          ICUT,AMX,ALEVEL,IAGAIN   4  0.7265E-06  0.6929E-12  20    CUT,PRCNT  0.100E-06  0.100E+01  M1,N1=  12  39
+ DIMENSIONS  12  39    12.0   6  32     5.2   3  24     2.6   3  25     2.9
+ DENSTY: JSHAP= 97    JBAR= 99        98.0     2.0
+ EVA M1,N1=    12    39
+ NOP,NOA,NOF,NOG,KE2MX= 0 0 0 016  NOLEP,NOLJI,NOLJF,JFJI= 1 1 1 1
+
+ EVA  M1*N1   468    ZEROS    81    CUTS     1    CUTPOP  0.1188E-12    SUM CUTS  0.6222E-14
+ LOSS BELOW YRAST LINE  0.0000E+00
+ EVA-,STEP  1
+ SEQOUT NROW,NSTEP   2   1         PARENT 255Md      ELAB   216.7    EXCIT    22.3
+
+ SUMP,SUMLOW    0.2004E-13    0.0000E+00
+ WROTE POPP ON UNIT  11               254Fm  
+ SUMA,SUMLOW    0.9524E-13    0.0000E+00
+ WROTE POPA ON UNIT  13               251Es  
+ TOTAL    0.2376E-04
+ FLOST(SUMPOP),TRIM(CUTOFF),RLOST(POPUL),RP 
+   0.0000E+00   0.1239E-11   0.0000E+00   0.0000E+00   0.0000E+00   0.0000E+00   0.0000E+00
+
+ J SPECTRUM OF PARENT 255Md  
+    AVERAGE=  11.240    SUM=   0.238E-04
+    0.00     47    141    232    316    392    458    512    554    583    598
+   10.00   1217    606    585    553    514    468    418    366    314    263
+   20.00    216    173    134    102     74     53     37     24     15      9
+   30.00      5      2      1      0      0      0      0      0      0
+
+ J SPECTRUM OF FISS   255Md  
+    AVERAGE=  11.173    SUM=   0.212E-04
+    0.00     48    143    234    318    394    460    521    563    592    611
+   10.00   1229    616    592    533    497    455    409    362    312    263
+   20.00    217    174    137     94     69     50     35     23     15      9
+   30.00      4      2      1      0      0      0      0      0      0
+
+ E SPECTRUM OF PARENT 255Md  
+    AVERAGE=   8.602    SUM=   0.238E-04
+    0.96      0      1      8     44    188    598   1386   2255   2535   1899
+   10.96    872    209
+
+ DJN SPEC
+    AVERAGE=  -0.311    SUM=   0.653E-06
+   -1.00   3109   6890      0      0      0      0      0      0      0      0
+
+ DJP SPEC
+    AVERAGE=  -0.188    SUM=   0.200E-13
+   -1.00   1878   8121      0      0      0      0      0      0      0      0
+
+ DJA SPEC
+    AVERAGE=  -1.194    SUM=   0.952E-13
+   -9.00      0      0      0      0      0      0    856   2643   4085   2414
+
+   N   M   EXMAX  AV.EX. NW  MW  EXMAXW      Q      AL   DELTA     AVJ      DJ        TOTAL  BRANCH
+  39  12    12.0     8.6  41  11    11.0    0.00   28.47   -0.69   11.24    0.00     0.238E-04 10000    
+  32   6     5.2     2.1  32   6     5.2   -6.68   28.37   -1.09    8.18    3.06     0.653E-06   275   N
+  24   3     2.6     1.3  24   3     2.6   -3.35   28.37    0.00    7.09    4.15     0.200E-13     0   P
+  25   3     2.9     1.4  25   3     2.9    7.91   28.09   -0.73    7.87    3.37     0.952E-13     0   A
+                     8.8  39  12    12.0   -5.52   28.97   -0.69   11.17             0.212E-04  8907   F
+                                                                                     0.194E-05   818   G
+
+ SPECTRA N,P,A  AVE    0.66    6.44   17.36         SUMS  0.8277E-06  0.1807E-13  0.8235E-13
+ SEQIN:PAIR,DELT,CST   4  11.00   1.160 AL=  28.37  28.28  28.28  28.00  28.86 DELTA= -1.09 -0.61 -0.55 -1.04 -1.09
+ AF/AN=   1.100   BS,BK=   1.0430   1.0498 DPBAR=   1.56 A= 254. Z= 101. Y=   0.146
+ SHELL CORRECTIONS        -4.2    -4.5    -4.1    -3.9     0.0
+
+ GRIDS  NROW,NSTEP   2   2
+ SUMN,SUMLOW    0.6535E-06    0.1943E-12
+ GOT POPP FROM UNIT  10      SUMP  0.7655E-07   M,N,EXMAX   6  32     5.2     254Md      CN= 256No  
+ SUMPOP FLOST,SUM,EXMAX,M,N  0.1059E-21  0.7300E-06    5.18   6  32  0.7655E-07    5.18   6  32  0.6535E-06    5.18   6  32  0  0
+ SUMPOP FLOST,SUM,EXMAX,M,N  0.0000E+00  0.7300E-06    5.18   6  32
+ CUTOFF   NSTEP,TOTAL,TRIM,TRIMJ,TRIME,TRIMLEV   2  0.7300E-06  0.0000E+00  0.0000E+00  0.0000E+00  0.0000E+00
+          ICUT,AMX,ALEVEL,IAGAIN   0  0.5033E-07  0.4800E-13  20    CUT,PRCNT  0.100E-06  0.100E+01  M1,N1=   6  32
+ DIMENSIONS   6  32     5.2   1   1    -0.7   1   1    -4.0   1   1    -4.0
+ DENSTY: JSHAP= 97    JBAR= 99        98.0     2.0
+ EVA M1,N1=     6    32
+ NOP,NOA,NOF,NOG,KE2MX= 0 0 0 016  NOLEP,NOLJI,NOLJF,JFJI= 1 1 1 1
+
+ EVA  M1*N1   192    ZEROS    63    CUTS     0    CUTPOP  0.3650E-14    SUM CUTS  0.0000E+00
+ LOSS BELOW YRAST LINE  0.0000E+00
+ EVA-,STEP  2
+ SEQOUT NROW,NSTEP   2   2         PARENT 254Md      ELAB   216.7    EXCIT    22.3
+
+ SUMP,SUMLOW    0.0000E+00    0.1943E-12
+ SUMA,SUMLOW    0.0000E+00    0.1943E-12
+ TOTAL    0.7300E-06
+ FLOST(SUMPOP),TRIM(CUTOFF),RLOST(POPUL),RP 
+   0.1059E-21   0.0000E+00   0.0000E+00   0.0000E+00   0.0000E+00   0.0000E+00   0.0000E+00
+
+ J SPECTRUM OF PARENT 254Md  
+    AVERAGE=   8.235    SUM=   0.730E-06
+    0.00     96    285    458    608    729    817    659    676    670    642
+   10.00   1831    562    491    415    339    268    141    106     77     54
+   20.00     36     13      8      4      2      0      0      0      0      0
+
+ J SPECTRUM OF FISS   254Md  
+
+ E SPECTRUM OF PARENT 254Md  
+    AVERAGE=   2.194    SUM=   0.730E-06
+    0.18    564   2887   3454   2167    796    130
+
+ DJN SPEC
+
+ DJP SPEC
+
+ DJA SPEC
+
+   N   M   EXMAX  AV.EX. NW  MW  EXMAXW      Q      AL   DELTA     AVJ      DJ        TOTAL  BRANCH
+  32   6     5.2     2.2  29   5     4.2    0.00   28.37   -1.09    8.23    0.00     0.730E-06 10000    
+   1   1    -0.7     0.0   1   1    -0.7   -5.79   28.28   -0.61    7.87    0.37     0.000E+00     0   N
+   1   1    -4.0     0.0   1   1    -4.0   -3.18   28.28   -0.55    7.87    0.37     0.000E+00     0   P
+   1   1    -4.0     0.0   1   1    -4.0    7.80   28.00   -1.04    7.87    0.37     0.000E+00     0   A
+                     0.0   1   6     5.2   -5.70   28.86   -1.09    0.00             0.000E+00     0   F
+                                                                                     0.730E-06 10000   G
+
+ SPECTRA N,P,A  AVE    0.00    0.00    0.00         SUMS  0.0000E+00  0.0000E+00  0.0000E+00
+1    ROW  2      ELEMENT Md      X-SECTION   0.267E-05
+(48)Ca+(208)Pb -> (256)No                                               
+ ELAB(MEV)  216.700     Q-VALUE -153.796    EXCIT   22.273
+ SIGFUS,SIGEVA,SIGFIS,SIGMXZ  0.9820E+01  0.7745E-04  0.9807E+01  0.7478E-04
+ ZT= 82    AT 208    ZP 20    AP  48
+
+
+             255Md     254Md  
+ SIG        0.194E-05 0.730E-06
+ B-G             818     10000
+  R-N            275         0
+ BR-P              0         0
+ BR-A              0         0
+ BR-F           8907         0
+ SIGF       0.212E-04 0.000E+00
+ TOTAL      0.238E-04 0.730E-06
+ EXCP            8.6       2.2
+ SPINP          11.2       8.2
+ EXCF            8.8       0.0
+ SPINF          11.2       0.0
+ DJN           -0.31      0.00
+ DJP           -0.19      0.00
+ DJA           -1.19      0.00
+ AV.E N         0.66      0.00
+ AV.E P         6.44      0.00
+ AV.E A        17.36      0.00
+ SUM GAM         5.4       2.2
+ SPIN GAM       13.6       8.2
+
+ TRIM       0.124E-11 0.000E+00
+ FLOST      0.000E+00 0.106E-21
+ RP         0.000E+00 0.000E+00
+ RLOSTG     0.000E+00 0.000E+00
+ RLOSTN     0.000E+00 0.000E+00
+ RLOSTP     0.000E+00 0.000E+00
+ RLOSTA     0.000E+00 0.000E+00
+ TIME              0         0
+
+ STORAGE
+  1.  0.
+  0.  0.
+1     ENERGY   216.700     0.000
+
+ HIVAP  ENGOUT
+
+(48)Ca+(208)Pb -> (256)No                                               
+    ELAB=   216.7      EXCIT=    22.3      CN= 256No  
+    FUSION X-SECT=  0.9820E+01      LCRIT=  22.0
+    EVAP SO FAR  0.7745E-04      FISSION  0.9807E+01
+
+ MASS DISTRIBUTION
+        6           5           4           3           2                 1           0           9           8           7
+ 256  0.0000E+00  0.7672E-04  0.7300E-06  0.0000E+00
+
+ Z-DISTIBUTION
+    Md         No  
+  0.267E-05  0.748E-04
+
+  CROSS SECTIONS (MB)
+  255No      256No  
+  0.748E-04  0.000E+00
+  254Md      255Md  
+  0.730E-06  0.194E-05
+
+ AVERAGE Z,DELTAZ,FWHMZ SO FAR  101.97    0.03    0.43
+ AVERAGE A,DELTAA,FWHMA SO FAR  254.99    1.01    0.23
+
+
+ SPECTRUM G
+    AVERAGE=   3.149    SUM=   0.861E-02
+    0.00      0   1166   2596   2602   1832   1048    520    231      0      0
+ SPECTRUM G
+    AVERAGE=   0.513    SUM=   0.618E-03
+    0.00   8343    147    247    558    703      0      0      0      0      0
+ SPECTRUM N
+    AVERAGE=   1.556    SUM=   0.419E+00
+    0.10   1463   4605   2486    979    330     99     27      6      1      0
+ SPECTRUM P
+    AVERAGE=   9.352    SUM=   0.238E-04
+    0.00      0      0      0      0      0      0    213    879   1904   2533
+   10.00   2249   1381    596    187     44      8      1      0      0      0
+ SPECTRUM A
+    AVERAGE=  21.350    SUM=   0.192E-04
+   10.00      0      0      0      0      0      0      0      0    582   1117
+   20.00   1680   2008   1915   1435    810    328     95     20      3      0
+ SPECTRUM F
+    AVERAGE=   0.383    SUM=   0.171E+02
+    0.00   7195   2042    562    149     38      9      2      0      0      0
+
+ HALFLIFE FIRST STEP IN UNITS OF 10**(-22) SEC AS FUNTION OF J
+   0.614E+03   0.210E+03   0.209E+03   0.209E+03   0.208E+03   0.207E+03   0.206E+03   0.205E+03   0.204E+03   0.202E+03
+   0.201E+03   0.199E+03   0.197E+03   0.194E+03   0.192E+03   0.189E+03   0.186E+03   0.183E+03   0.180E+03   0.176E+03
+   0.172E+03   0.168E+03   0.164E+03   0.160E+03   0.155E+03   0.151E+03   0.146E+03   0.140E+03   0.135E+03   0.130E+03
+   0.124E+03   0.118E+03   0.112E+03   0.106E+03   0.996E+02   0.932E+02   0.869E+02   0.805E+02   0.741E+02   0.678E+02
+   0.000E+00   0.000E+00   0.000E+00   0.000E+00   0.000E+00   0.000E+00
+1     ENERGY   219.400     0.000
+  256.  102.   0.0010    21     1    25    25    35    12    12    20
+ DEL     1.0     0.1     6.0    17.0     0.0
+ TRANSM  APAR,ZPAR,SIGLOW,UNIT,DEL 256.0 102.0  0.10E-02  21     0.1     6.0    18.0
+ SEQIN:PAIR,DELT,CST   4  11.00   1.160 AL=  28.56  28.47  28.47  28.18  28.99 DELTA=  0.00 -0.60 -0.69  0.00  0.00
+ AF/AN=   1.100   BS,BK=   1.0378   1.0434 DPBAR=   1.29 A= 256. Z= 102. Y=   0.136
+ SHELL CORRECTIONS        -4.1    -4.4    -4.0    -4.4     0.0
+1 NEW ROW
+
+ GRIDS  NROW,NSTEP   1   1
+ SUMN,SUMLOW    0.2201E+02    0.0000E+00
+ SUMPOP FLOST,SUM,EXMAX,M,N  0.0000E+00  0.2201E+02   24.47   1  43
+ SUMPOP FLOST,SUM,EXMAX,M,N  0.0000E+00  0.2201E+02   24.47   1  43
+ CUTOFF   NSTEP,TOTAL,TRIM,TRIMJ,TRIME,TRIMLEV   1  0.2201E+02  0.0000E+00  0.0000E+00  0.0000E+00  0.0000E+00
+          ICUT,AMX,ALEVEL,IAGAIN   0  0.1019E+01  0.2489E-03  12    CUT,PRCNT  0.100E-07  0.100E+01  M1,N1=   1  43
+ CUTOFF OLD,NEW M1   1  25
+ DIMENSIONS  25  43    24.5  18  48    17.3  15  48    14.2  16  48    15.0
+ DENSTY: JSHAP= 97    JBAR= 99        98.0     2.0
+ EVA M1,N1=    25    43
+ NOP,NOA,NOF,NOG,KE2MX= 0 0 0 016  NOLEP,NOLJI,NOLJF,JFJI= 1 1 1 1
+
+ EVA  M1*N1  1075    ZEROS   428    CUTS   312    CUTPOP  0.1101E-06    SUM CUTS  0.4469E-05
+ LOSS BELOW YRAST LINE  0.0000E+00
+ EVA-,STEP  1
+ SEQOUT NROW,NSTEP   1   1         PARENT 256No      ELAB   219.4    EXCIT    24.5
+
+ SUMP,SUMLOW    0.8671E-04    0.0000E+00
+ WROTE POPP ON UNIT  10               255Md  
+ SUMA,SUMLOW    0.6802E-04    0.0000E+00
+ WROTE POPA ON UNIT  12               252Fm  
+ TOTAL    0.2201E+02
+ FLOST(SUMPOP),TRIM(CUTOFF),RLOST(POPUL),RP 
+   0.0000E+00   0.4469E-05   0.0000E+00   0.0000E+00   0.0000E+00   0.0000E+00   0.0000E+00
+
+ J SPECTRUM OF PARENT 256No  
+    AVERAGE=  16.655    SUM=   0.220E+02
+    0.00     21     63    105    146    186    224    261    296    328    357
+   10.00    384    407    426    442    453    460    463    461    454    443
+   20.00    428    408    385    358    329    298    266    232    200    169
+   30.00    137    111     88     65     48     33     21     13      7      3
+   40.00      1      0      0
+
+ J SPECTRUM OF FISS   256No  
+    AVERAGE=  16.749    SUM=   0.211E+02
+    0.00     20     62    103    143    183    221    257    292    324    353
+   10.00    380    403    423    438    450    458    461    460    454    444
+   20.00    429    410    388    362    333    302    270    236    204    173
+   30.00    141    114     90     67     49     34     22     14      7      3
+   40.00      1      0      0
+
+ E SPECTRUM OF PARENT 256No  
+    AVERAGE=  24.467    SUM=   0.220E+02
+   20.47      0      0      0      0  10000
+
+ DJN SPEC
+    AVERAGE=  -0.687    SUM=   0.931E+00
+   -1.00   6873   3126      0      0      0      0      0      0      0      0
+
+ DJP SPEC
+    AVERAGE=  -0.623    SUM=   0.867E-04
+   -1.00   6232   3767      0      0      0      0      0      0      0      0
+
+ DJA SPEC
+    AVERAGE=  -1.982    SUM=   0.680E-04
+   -9.00      0      0      0      0      0      0   4216   2538   2097   1147
+
+   N   M   EXMAX  AV.EX. NW  MW  EXMAXW      Q      AL   DELTA     AVJ      DJ        TOTAL  BRANCH
+  43  25    24.5    24.5  45  24    23.5    0.00   28.56    0.00   16.65    0.00     0.220E+02 10000    
+  48  18    17.3    15.8  49  18    17.3   -7.06   28.47   -0.60   13.82    2.83     0.931E+00   423   N
+  48  15    14.2    10.5  49  15    14.2   -4.31   28.47   -0.69   12.44    4.21     0.867E-04     0   P
+  48  16    15.0    11.3  49  16    15.0    8.58   28.18    0.00   12.16    4.49     0.680E-04     0   A
+                    24.5  43  25    24.5   -5.48   28.99    0.00   16.75             0.211E+02  9577   F
+                                                                                     0.000E+00     0   G
+
+ SPECTRA N,P,A  AVE    1.65    9.67   21.77         SUMS  0.9296E+00  0.8668E-04  0.6776E-04
+ SEQIN:PAIR,DELT,CST   4  11.00   1.160 AL=  28.47  28.37  28.37  28.09  28.89 DELTA= -0.60  0.00 -1.09 -0.57 -0.60
+ AF/AN=   1.100   BS,BK=   1.0371   1.0426 DPBAR=   1.26 A= 255. Z= 102. Y=   0.135
+ SHELL CORRECTIONS        -4.4    -4.6    -4.2    -4.3     0.0
+
+ GRIDS  NROW,NSTEP   1   2
+ SUMN,SUMLOW    0.9309E+00    0.0000E+00
+ SUMPOP FLOST,SUM,EXMAX,M,N  0.0000E+00  0.9309E+00   17.31  18  48
+ SUMPOP FLOST,SUM,EXMAX,M,N  0.0000E+00  0.9309E+00   17.31  18  48
+ CUTOFF   NSTEP,TOTAL,TRIM,TRIMJ,TRIME,TRIMLEV   2  0.9309E+00  0.0000E+00  0.0000E+00  0.0000E+00  0.0000E+00
+          ICUT,AMX,ALEVEL,IAGAIN   0  0.3912E-01  0.1865E-07  21    CUT,PRCNT  0.100E-06  0.100E+01  M1,N1=  18  42
+ DIMENSIONS  18  42    17.3  12  47    11.2   8  39     7.4   8  39     7.7
+ DENSTY: JSHAP= 97    JBAR= 99        98.0     2.0
+ EVA M1,N1=    18    42
+ NOP,NOA,NOF,NOG,KE2MX= 0 0 0 016  NOLEP,NOLJI,NOLJF,JFJI= 1 1 1 1
+
+ EVA  M1*N1   756    ZEROS   129    CUTS    29    CUTPOP  0.4655E-08    SUM CUTS  0.3607E-07
+ LOSS BELOW YRAST LINE  0.0000E+00
+ EVA-,STEP  2
+ SEQOUT NROW,NSTEP   1   2         PARENT 255No      ELAB   219.4    EXCIT    24.5
+
+ SUMP,SUMLOW    0.4802E-06    0.0000E+00
+ WROTE POPP ON UNIT  10               254Md  
+ SUMA,SUMLOW    0.3428E-06    0.0000E+00
+ WROTE POPA ON UNIT  12               251Fm  
+ TOTAL    0.9309E+00
+ FLOST(SUMPOP),TRIM(CUTOFF),RLOST(POPUL),RP 
+   0.0000E+00   0.3607E-07   0.0000E+00   0.0000E+00   0.0000E+00   0.0000E+00   0.0000E+00
+
+ J SPECTRUM OF PARENT 255No  
+    AVERAGE=  13.820    SUM=   0.931E+00
+    0.00     30     89    147    203    256    306    351    390    424    452
+   10.00    964    507    515    517    511    499    480    455    426    393
+   20.00    356    318    279    240    203    168    135    106     82     60
+   30.00     44     30     20     13      7      4      2      1      0      0
+
+ J SPECTRUM OF FISS   255No  
+    AVERAGE=  13.894    SUM=   0.901E+00
+    0.00     29     88    145    200    253    301    346    386    420    449
+   10.00    958    504    513    515    510    499    481    457    429    396
+   20.00    360    322    283    244    206    171    138    109     84     62
+   30.00     45     31     20     13      8      4      2      1      0      0
+
+ E SPECTRUM OF PARENT 255No  
+    AVERAGE=  15.753    SUM=   0.931E+00
+    0.31      0      0      0      0      0      0      0      0      0      3
+   10.31     12     41    134    406   1104   2583   4417   1296
+
+ DJN SPEC
+    AVERAGE=  -0.522    SUM=   0.296E-01
+   -1.00   5220   4779      0      0      0      0      0      0      0      0
+
+ DJP SPEC
+    AVERAGE=  -0.432    SUM=   0.480E-06
+   -1.00   4315   5684      0      0      0      0      0      0      0      0
+
+ DJA SPEC
+    AVERAGE=  -1.577    SUM=   0.343E-06
+   -9.00      0      0      0      0      0      0   2371   2691   3270   1667
+
+   N   M   EXMAX  AV.EX. NW  MW  EXMAXW      Q      AL   DELTA     AVJ      DJ        TOTAL  BRANCH
+  42  18    17.3    15.8  44  17    16.3    0.00   28.47   -0.60   13.82    0.00     0.931E+00 10000    
+  47  12    11.2     8.5  48  12    11.2   -5.99   28.37    0.00   11.04    2.78     0.296E-01   318   N
+  39   8     7.4     4.0  39   8     7.4   -3.94   28.37   -1.09    9.77    4.05     0.480E-06     0   P
+  39   8     7.7     4.7  39   8     7.7    8.43   28.09   -0.57    9.72    4.10     0.343E-06     0   A
+                    15.7  42  18    17.3   -5.67   28.89   -0.60   13.89             0.901E+00  9682   F
+                                                                                     0.176E-04     0   G
+
+ SPECTRA N,P,A  AVE    1.27    8.28   19.86         SUMS  0.3031E-01  0.4789E-06  0.3346E-06
+1    ROW  1      ELEMENT No      X-SECTION   0.176E-04
+(48)Ca+(208)Pb -> (256)No                                               
+ ELAB(MEV)  219.400     Q-VALUE -153.796    EXCIT   24.467
+ SIGFUS,SIGEVA,SIGFIS,SIGMXZ  0.2201E+02  0.1758E-04  0.2198E+02  0.1758E-04
+ ZT= 82    AT 208    ZP 20    AP  48
+
+
+             256No     255No  
+ SIG        0.000E+00 0.176E-04
+ B-G               0         0
+  R-N            423       318
+ BR-P              0         0
+ BR-A              0         0
+ BR-F           9577      9682
+ SIGF       0.211E+02 0.901E+00
+ TOTAL      0.220E+02 0.931E+00
+ EXCP           24.5      15.8
+ SPINP          16.7      13.8
+ EXCF           24.5      15.7
+ SPINF          16.7      13.9
+ DJN           -0.69     -0.52
+ DJP           -0.62     -0.43
+ DJA           -1.98     -1.58
+ AV.E N         1.65      1.27
+ AV.E P         9.67      8.28
+ AV.E A        21.77     19.86
+ SUM GAM         0.0       6.0
+ SPIN GAM        0.0      16.6
+
+ TRIM       0.447E-05 0.361E-07
+ FLOST      0.000E+00 0.000E+00
+ RP         0.000E+00 0.000E+00
+ RLOSTG     0.000E+00 0.000E+00
+ RLOSTN     0.000E+00 0.000E+00
+ RLOSTP     0.000E+00 0.000E+00
+ RLOSTA     0.000E+00 0.000E+00
+ TIME              0         0
+
+ STORAGE
+  1.  1.
+  0.  0.
+  255.  101.   0.0010    21     1    25    25    35    12    12    20
+ DEL     1.0     0.1     6.0    18.0     0.0
+ TRANSM  APAR,ZPAR,SIGLOW,UNIT,DEL 255.0 101.0  0.10E-02  21     0.1     6.0    17.0
+ SEQIN:PAIR,DELT,CST   4  11.00   1.160 AL=  28.47  28.37  28.37  28.09  28.97 DELTA= -0.69 -1.09  0.00 -0.73 -0.69
+ AF/AN=   1.100   BS,BK=   1.0438   1.0508 DPBAR=   1.60 A= 255. Z= 101. Y=   0.147
+ SHELL CORRECTIONS        -4.0    -4.2    -3.8    -4.1     0.0
+1 NEW ROW
+
+ GRIDS  NROW,NSTEP   2   1
+ SUMN,SUMLOW    0.0000E+00    0.0000E+00
+ GOT POPP FROM UNIT  10      SUMP  0.8671E-04   M,N,EXMAX  15  48    14.2     255Md      CN= 256No  
+ SUMPOP FLOST,SUM,EXMAX,M,N  0.0000E+00  0.8671E-04   14.16  15  48
+ SUMPOP FLOST,SUM,EXMAX,M,N  0.0000E+00  0.8671E-04   14.16  15  48
+ CUTOFF   NSTEP,TOTAL,TRIM,TRIMJ,TRIME,TRIMLEV   1  0.8671E-04  0.5784E-11  0.5784E-11  0.0000E+00  0.0000E+00
+          ICUT,AMX,ALEVEL,IAGAIN   0  0.2253E-05  0.1074E-11  21    CUT,PRCNT  0.100E-06  0.100E+01  M1,N1=  15  41
+ DIMENSIONS  15  41    14.2   8  39     7.4   5  32     4.8   6  33     5.1
+ DENSTY: JSHAP= 97    JBAR= 99        98.0     2.0
+ EVA M1,N1=    15    41
+ NOP,NOA,NOF,NOG,KE2MX= 0 0 0 016  NOLEP,NOLJI,NOLJF,JFJI= 1 1 1 1
+
+ EVA  M1*N1   615    ZEROS   122    CUTS     0    CUTPOP  0.4336E-12    SUM CUTS  0.0000E+00
+ LOSS BELOW YRAST LINE  0.0000E+00
+ EVA-,STEP  1
+ SEQOUT NROW,NSTEP   2   1         PARENT 255Md      ELAB   219.4    EXCIT    24.5
+
+ SUMP,SUMLOW    0.6422E-12    0.0000E+00
+ WROTE POPP ON UNIT  11               254Fm  
+ SUMA,SUMLOW    0.1731E-11    0.0000E+00
+ WROTE POPA ON UNIT  13               251Es  
+ TOTAL    0.8671E-04
+ FLOST(SUMPOP),TRIM(CUTOFF),RLOST(POPUL),RP 
+   0.0000E+00   0.5784E-11   0.0000E+00   0.0000E+00   0.0000E+00   0.0000E+00   0.0000E+00
+
+ J SPECTRUM OF PARENT 255Md  
+    AVERAGE=  12.442    SUM=   0.867E-04
+    0.00     38    113    187    256    321    379    429    471    503    526
+   10.00   1100    565    560    546    524    495    460    421    378    333
+   20.00    288    245    204    166    131    102     76     56     40     27
+   30.00     18     11      6      4      2      1      0      0      0      0
+
+ J SPECTRUM OF FISS   255Md  
+    AVERAGE=  12.536    SUM=   0.819E-04
+    0.00     37    111    182    250    313    371    421    463    497    525
+   10.00   1094    564    559    547    527    499    462    424    383    339
+   20.00    295    251    209    171    136    104     78     58     41     28
+   30.00     18     12      7      4      2      1      0      0      0      0
+
+ E SPECTRUM OF PARENT 255Md  
+    AVERAGE=  10.491    SUM=   0.867E-04
+    0.16      0      0      0      0      4     22     94    315    832   1646
+   10.16   2342   2343   1584    664    147
+
+ DJN SPEC
+    AVERAGE=  -0.398    SUM=   0.362E-05
+   -1.00   3978   6021      0      0      0      0      0      0      0      0
+
+ DJP SPEC
+    AVERAGE=  -0.305    SUM=   0.642E-12
+   -1.00   3048   6951      0      0      0      0      0      0      0      0
+
+ DJA SPEC
+    AVERAGE=  -1.354    SUM=   0.173E-11
+   -9.00      0      0      0      0      0      0   1534   2658   3616   2189
+
+   N   M   EXMAX  AV.EX. NW  MW  EXMAXW      Q      AL   DELTA     AVJ      DJ        TOTAL  BRANCH
+  41  15    14.2    10.5  43  14    13.2    0.00   28.47   -0.69   12.44    0.00     0.867E-04 10000    
+  39   8     7.4     3.3  39   8     7.4   -6.68   28.37   -1.09    9.33    3.11     0.362E-05   417   N
+  32   5     4.8     2.2  32   5     4.8   -3.35   28.37    0.00    8.35    4.09     0.642E-12     0   P
+  33   6     5.1     2.2  33   6     5.1    7.91   28.09   -0.73    8.58    3.87     0.173E-11     0   A
+                    10.5  41  15    14.2   -5.52   28.97   -0.69   12.54             0.819E-04  9448   F
+                                                                                     0.117E-05   135   G
+
+ SPECTRA N,P,A  AVE    0.87    6.97   17.85         SUMS  0.4068E-05  0.6209E-12  0.1611E-11
+ SEQIN:PAIR,DELT,CST   4  11.00   1.160 AL=  28.37  28.28  28.28  28.00  28.86 DELTA= -1.09 -0.61 -0.55 -1.04 -1.09
+ AF/AN=   1.100   BS,BK=   1.0430   1.0498 DPBAR=   1.56 A= 254. Z= 101. Y=   0.146
+ SHELL CORRECTIONS        -4.2    -4.5    -4.1    -3.9     0.0
+
+ GRIDS  NROW,NSTEP   2   2
+ SUMN,SUMLOW    0.3616E-05    0.1173E-12
+ GOT POPP FROM UNIT  10      SUMP  0.4802E-06   M,N,EXMAX   8  39     7.4     254Md      CN= 256No  
+ SUMPOP FLOST,SUM,EXMAX,M,N -0.2541E-20  0.4096E-05    7.38   8  39  0.4802E-06    7.37   8  39  0.3616E-05    7.38   8  39  0  0
+ SUMPOP FLOST,SUM,EXMAX,M,N  0.0000E+00  0.4096E-05    7.38   8  39
+ CUTOFF   NSTEP,TOTAL,TRIM,TRIMJ,TRIME,TRIMLEV   2  0.4096E-05  0.4804E-12  0.2430E-12  0.0000E+00  0.2374E-12
+          ICUT,AMX,ALEVEL,IAGAIN   1  0.2077E-06  0.3961E-12  19    CUT,PRCNT  0.100E-06  0.100E+01  M1,N1=   8  35
+ DIMENSIONS   8  35     7.4   2  17     1.5   1   1    -1.8   1   1    -1.8
+ DENSTY: JSHAP= 97    JBAR= 99        98.0     2.0
+ EVA M1,N1=     8    35
+ NOP,NOA,NOF,NOG,KE2MX= 0 0 0 016  NOLEP,NOLJI,NOLJF,JFJI= 1 1 1 1
+
+ EVA  M1*N1   280    ZEROS    74    CUTS     0    CUTPOP  0.2048E-13    SUM CUTS  0.0000E+00
+ LOSS BELOW YRAST LINE  0.0000E+00
+ EVA-,STEP  2
+ SEQOUT NROW,NSTEP   2   2         PARENT 254Md      ELAB   219.4    EXCIT    24.5
+
+ SUMP,SUMLOW    0.0000E+00    0.1173E-12
+ SUMA,SUMLOW    0.0000E+00    0.1173E-12
+ TOTAL    0.4096E-05
+ FLOST(SUMPOP),TRIM(CUTOFF),RLOST(POPUL),RP 
+  -0.2541E-20   0.4804E-12   0.0000E+00   0.0000E+00   0.0000E+00   0.0000E+00   0.0000E+00
+
+ J SPECTRUM OF PARENT 254Md  
+    AVERAGE=   9.385    SUM=   0.410E-05
+    0.00     66    197    320    430    523    596    647    676    683    624
+   10.00   1857    598    544    481    415    348    283    201    156    117
+   20.00     84     59     33     22     13      8      3      2      1      0
+
+ J SPECTRUM OF FISS   254Md  
+    AVERAGE=   9.097    SUM=   0.114E-06
+    0.00     65    190    305    407    494    565    619    656    674    677
+   10.00   2094    692    648    595    535    471     64     55     47     39
+   20.00     31     24     18     13      9      0      0      0      0      0
+
+ E SPECTRUM OF PARENT 254Md  
+    AVERAGE=   3.386    SUM=   0.410E-05
+    0.38    250   1233   2273   2640   2093   1102    354     51
+
+ DJN SPEC
+    AVERAGE=  -0.037    SUM=   0.187E-08
+   -1.00    373   9626      0      0      0      0      0      0      0      0
+
+ DJP SPEC
+
+ DJA SPEC
+
+   N   M   EXMAX  AV.EX. NW  MW  EXMAXW      Q      AL   DELTA     AVJ      DJ        TOTAL  BRANCH
+  35   8     7.4     3.4  36   7     6.4    0.00   28.37   -1.09    9.38    0.00     0.410E-05 10000    
+  17   2     1.5     0.7  17   2     1.5   -5.79   28.28   -0.61    5.74    3.64     0.187E-08     5   N
+   1   1    -1.8     0.0   1   1    -1.8   -3.18   28.28   -0.55    5.74    3.64     0.000E+00     0   P
+   1   1    -1.8     0.0   1   1    -1.8    7.80   28.00   -1.04    5.74    3.64     0.000E+00     0   A
+                     6.5  25   8     7.4   -5.70   28.86   -1.09    9.10             0.114E-06   279   F
+                                                                                     0.398E-05  9716   G
+
+ SPECTRA N,P,A  AVE    0.17    0.00    0.00         SUMS  0.4693E-08  0.0000E+00  0.0000E+00
+1    ROW  2      ELEMENT Md      X-SECTION   0.515E-05
+(48)Ca+(208)Pb -> (256)No                                               
+ ELAB(MEV)  219.400     Q-VALUE -153.796    EXCIT   24.467
+ SIGFUS,SIGEVA,SIGFIS,SIGMXZ  0.2201E+02  0.2274E-04  0.2198E+02  0.1758E-04
+ ZT= 82    AT 208    ZP 20    AP  48
+
+
+             255Md     254Md  
+ SIG        0.117E-05 0.398E-05
+ B-G             135      9716
+  R-N            417         5
+ BR-P              0         0
+ BR-A              0         0
+ BR-F           9448       279
+ SIGF       0.819E-04 0.114E-06
+ TOTAL      0.867E-04 0.410E-05
+ EXCP           10.5       3.4
+ SPINP          12.4       9.4
+ EXCF           10.5       6.5
+ SPINF          12.5       9.1
+ DJN           -0.40     -0.04
+ DJP           -0.30      0.00
+ DJA           -1.35      0.00
+ AV.E N         0.87      0.17
+ AV.E P         6.97      0.00
+ AV.E A        17.85      0.00
+ SUM GAM         5.6       3.3
+ SPIN GAM       15.0       9.4
+
+ TRIM       0.578E-11 0.480E-12
+ FLOST      0.000E+00-0.254E-20
+ RP         0.000E+00 0.000E+00
+ RLOSTG     0.000E+00 0.000E+00
+ RLOSTN     0.000E+00 0.000E+00
+ RLOSTP     0.000E+00 0.000E+00
+ RLOSTA     0.000E+00 0.000E+00
+ TIME              0         0
+
+ STORAGE
+  1.  0.
+  0.  0.
+1     ENERGY   219.400     0.000
+
+ HIVAP  ENGOUT
+
+(48)Ca+(208)Pb -> (256)No                                               
+    ELAB=   219.4      EXCIT=    24.5      CN= 256No  
+    FUSION X-SECT=  0.2201E+02      LCRIT=  28.0
+    EVAP SO FAR  0.2274E-04      FISSION  0.2198E+02
+
+ MASS DISTRIBUTION
+        6           5           4           3           2                 1           0           9           8           7
+ 256  0.0000E+00  0.1876E-04  0.3980E-05  0.0000E+00
+
+ Z-DISTIBUTION
+    Md         No  
+  0.515E-05  0.176E-04
+
+  CROSS SECTIONS (MB)
+  255No      256No  
+  0.176E-04  0.000E+00
+  254Md      255Md  
+  0.398E-05  0.117E-05
+
+ AVERAGE Z,DELTAZ,FWHMZ SO FAR  101.77    0.23    0.99
+ AVERAGE A,DELTAA,FWHMA SO FAR  254.82    1.18    0.90
+
+
+ SPECTRUM G
+    AVERAGE=   3.323    SUM=   0.156E-01
+    0.00      0    923   2384   2599   1961   1197    633    301      0      0
+ SPECTRUM G
+    AVERAGE=   1.703    SUM=   0.307E-03
+    0.00   4797    153    741   1830   2476      0      0      0      0      0
+ SPECTRUM N
+    AVERAGE=   1.643    SUM=   0.960E+00
+    0.10   1322   4440   2567   1087    396    130     39     11      2      0
+ SPECTRUM P
+    AVERAGE=   9.661    SUM=   0.872E-04
+    0.00      0      0      0      0      0      0    150    672   1592   2344
+   10.00   2337   1639    827    313     93     22      4      0      0      0
+ SPECTRUM A
+    AVERAGE=  21.764    SUM=   0.681E-04
+   10.00      0      0      0      0      0      0      0      0    413    856
+   20.00   1402   1843   1958   1662   1084    523    188     52     11      2
+ SPECTRUM F
+    AVERAGE=   0.423    SUM=   0.373E+02
+    0.00   6990   2128    630    181     50     13      3      0      0      0
+
+ HALFLIFE FIRST STEP IN UNITS OF 10**(-22) SEC AS FUNTION OF J
+   0.428E+03   0.152E+03   0.152E+03   0.152E+03   0.151E+03   0.151E+03   0.150E+03   0.149E+03   0.148E+03   0.147E+03
+   0.146E+03   0.145E+03   0.143E+03   0.142E+03   0.140E+03   0.138E+03   0.136E+03   0.134E+03   0.131E+03   0.129E+03
+   0.126E+03   0.124E+03   0.121E+03   0.118E+03   0.115E+03   0.112E+03   0.108E+03   0.105E+03   0.101E+03   0.972E+02
+   0.933E+02   0.893E+02   0.852E+02   0.810E+02   0.767E+02   0.723E+02   0.679E+02   0.635E+02   0.590E+02   0.546E+02
+   0.502E+02   0.459E+02   0.416E+02   0.000E+00   0.000E+00   0.000E+00   0.000E+00   0.000E+00   0.000E+00
+
+ HIVAP  CASOUT
+
+(48)Ca+(208)Pb -> (256)No                                               
+
+
+     E_lab  A*MeV   E*/MeV     SI_fus      SI_VR     SI_Spalt  L_krit     b_Spalt
+
+   213.500    4.45    19.7  0.2684E+01  0.2965E-03  0.2681E+01     9.0       99.87
+   216.700    4.51    22.3  0.9820E+01  0.7745E-04  0.9807E+01    22.0       99.87
+   219.400    4.57    24.5  0.2201E+02  0.2274E-04  0.2198E+02    28.0       99.86
+
+     Querschnitte / mbarn
+
+  E*/MeV   255No     256No  
+    19.7 0.295E-03 0.000E+00
+    22.3 0.748E-04 0.000E+00
+    24.5 0.176E-04 0.000E+00
+
+  E*/MeV   254Md     255Md  
+    19.7 0.269E-07 0.135E-05
+    22.3 0.730E-06 0.194E-05
+    24.5 0.398E-05 0.117E-05
+
+
+
+ Ende HIVAP 

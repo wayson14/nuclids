@@ -8,7 +8,7 @@ results/plots/
 __pycache__/
 *.py[cod]
 *$py.class
-
+hivap_run/ 
 # C extensions
 *.so
 

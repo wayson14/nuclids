@@ -62,7 +62,7 @@ def extract_channels_energies_sigmas_from_file(filename: str = "output_5.dat"):
             if line_number == 1:
 
                 words = line.split()
-                if len(words) == 1:  # file is with no results
+                if len(words) < 2:  # file is with no results
                     raise NoHivapOutput()
                 n_sum = int(words[4]) + int(words[8])
                 p_sum = int(words[2]) + int(words[6])
@@ -152,6 +152,6 @@ if __name__ == "__main__":
     except NoHivapOutput:
         print("Hivap provided no sigmas for this reaction (check hivaperg.dat)")
     except FileNotFoundError as err:
-        print("No file found!", err.with_traceback())
+        print("No file found!", err)
     except BaseException as err:
-        print(err.with_traceback())
+        print(f"ERR: {err}")

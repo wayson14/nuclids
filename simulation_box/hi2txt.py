@@ -504,6 +504,7 @@ def main():
                                 float(words[iw])
                             except ValueError:
                                 continue
+
                             sigres[znr][nnr][enr] = float(words[iw])
 
                             #######################
@@ -526,8 +527,8 @@ def main():
                             # )
                     enr = enr + 1
                     # increment the E* counter
-                    # if args.verbose:
-                    # print("enr=", enr)
+                    if args.verbose:
+                        print("enr=", enr)
 
     nrz = znr + 1
     nrn = nnr + 1
