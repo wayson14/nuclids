@@ -1,4 +1,5 @@
 import matplotlib.pyplot as plt
+import matplotlib.ticker as ticker
 import periodictable as pt
 import re
 import numpy as np
@@ -109,7 +110,7 @@ def plot_experiment(
         # print(type(max(column[1:])))
 
         if max(column[1:]) == 0:
-            print(column[0], "zeroes")
+            # print(column[0], "zeroes")
             continue
 
         channel_dict = column[0]
@@ -128,6 +129,9 @@ def plot_experiment(
         )
         i += 1
 
+    ax.yaxis.set_minor_locator(
+        ticker.LogLocator(base=10.0, subs=np.arange(1, 10) * 0.1)
+    )
     plt.grid()
     plt.tight_layout()
     box = ax.get_position()
@@ -147,7 +151,7 @@ if __name__ == "__main__":
         plot_experiment(plot_data, reaction_label, plot_filename)
     except NoHivapOutput:
         print("Hivap provided no sigmas for this reaction (check hivaperg.dat)")
-    except FileNotFoundError:
-        print("No file found!")
+    except FileNotFoundError as err:
+        print("No file found!", err.with_traceback())
     except BaseException as err:
         print(err.with_traceback())

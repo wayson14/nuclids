@@ -8,8 +8,8 @@ Creates n hivap input tables based on input csv file, template of columns:
 relcode | shortened_label       | energy (E_lab) [MeV] | max_channel   | ...(unnecessary)
 (int)   | (a)Cr+(a)Pb -> (a)Sg  | 250                  | 1n2p1a        | ...(unnecessary)
 """
-N_CHANNEL = 6
-P_CHANNEL = 6
+N_CHANNEL = 5
+P_CHANNEL = 5
 A_CHANNEL = 2
 
 
@@ -38,10 +38,16 @@ class Experiment:
     def parse_shortened_label(self) -> tuple[int, int, int, int]:
         pass
 
-    def determine_max_channel(self, exp_channel_str: str) -> tuple[int, int, int]:
+    def determine_max_channel(
+        self,
+        exp_channel_str: str,
+        max_channel_n: int = 1,
+        max_channel_p: int = 1,
+        max_channel_a: int = 0,
+    ) -> tuple[int, int, int]:
         "Returns a vector of of max n, p and alpha(a) values"
         # TODO: remove this temporary hardcode
-        return (N_CHANNEL, P_CHANNEL, A_CHANNEL)
+        return (max_channel_n, max_channel_p, max_channel_a)
         pass
 
     def append_energy_series(self, energy_value: int):
@@ -97,21 +103,17 @@ def parse_data(dict_table):
     pass
 
 
-# def load_experiment_series_from_csv(relcode):
-#     def load_rows(table_name: str) -> [dict]:
-#     with open("csv/" + table_name + ".csv", "r", newline="") as csvfile:
-#         reader = csv.DictReader(csvfile)
-#         table_dicts = []
-#         for table_dict in reader:
-#             table_dicts.append(table_dict)
-#         return table_dicts
-
-
 def save_hivap_input_file(relcode):
     pass
 
 
-def experiment_generator(csv_filename="results.csv", start_relcode=1, stop_relcode=1):
+def experiment_generator(
+    csv_filename="results.csv",
+    start_relcode=1,
+    stop_relcode=1,
+    max_channel_n=N_CHANNEL,
+    max_channel_p=P_CHANNEL,
+):
     """Function which:
     1. reads the content of the whole csv containing experiment series,
     2. creates Experiment objects of particular experiments (rows where
@@ -135,6 +137,10 @@ def experiment_generator(csv_filename="results.csv", start_relcode=1, stop_relco
         else:
             experiment: Experiment = experiment_dict[row["relcode"]]
             experiment.append_energy_series(round(float(row["energy"]), 3))
+        # OVERRIDE DETERMINING CHANNEL FROM FILE
+        experiment.channel_n = max_channel_n
+        experiment.channel_p = max_channel_p
+        print(f"CH N: {experiment.channel_n}")
 
     for key in experiment_dict.keys():
         if (int(key) >= start_relcode) and (int(key) <= stop_relcode):
@@ -143,9 +149,6 @@ def experiment_generator(csv_filename="results.csv", start_relcode=1, stop_relco
         else:
             break
     return
-    # sample_experiment: Experiment = experiment_dict["1"]
-    # sample_experiment.generate_hivapein()
-    # now experiment_dict should be full of experiment data
 
 
 if __name__ == "__main__":
@@ -153,4 +156,6 @@ if __name__ == "__main__":
         csv_filename=sys.argv[1],
         start_relcode=int(sys.argv[2]),
         stop_relcode=int(sys.argv[3]),
+        max_channel_n=int(sys.argv[4]),
+        max_channel_p=int(sys.argv[5]),
     )

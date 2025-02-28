@@ -1,0 +1,82 @@
+          Programm HIVAP,  Autor  W.Reisdorf   Version fuer "rzri6f" vom  7. 6. 1994
+
+           Bearbeitung F.P.Heßberger
+           
+(58)Fe+(209)Bi -> (267)Mt                                               
+           
+
+ Unterprogramm SEPENF
+ Q-Wert  -208.205 MeV
+ Massen aus der Datei "mlz.dat" 
+
+         Exp. Schaleneffekte,  SHELL0=   -1.20
+          Mt  263   Mt  264   Mt  265   Mt  266   Mt  267
+             -4.85     -5.48     -4.85     -4.87     -4.63
+          Hs  262   Hs  263   Hs  264   Hs  265   Hs  266
+             -4.15     -5.05     -4.97     -4.86     -4.75
+          Ns  261   Ns  262   Ns  263   Ns  264   Ns  265
+             -4.93     -5.09     -4.86     -4.74     -4.59
+          Sg  260   Sg  261   Sg  262   Sg  263   Sg  264
+             -4.94     -4.84     -4.74     -4.58     -4.43
+          Ha  259   Ha  260   Ha  261   Ha  262   Ha  263
+             -4.75     -4.54     -4.44     -4.22     -4.09
+
+           BARFAC=   1.000      BAR0=   0.000
+
+          Separationsenergien (BN,BP,BA) und Spaltbarrieren
+          Mt  263   Mt  264   Mt  265   Mt  266   Mt  267
+              8.67      7.17      8.39      6.79      8.24
+             -0.06      0.13      0.17      0.23      0.63
+            -11.30    -11.20    -11.12    -11.00    -10.87
+              5.03      5.67      5.05      5.09      4.86
+             -0.68     -1.35     -0.68     -1.56     -0.60
+          Hs  262   Hs  263   Hs  264   Hs  265   Hs  266
+              8.48      6.98      8.19      6.73      7.84
+              1.70      2.15      2.22      2.45      2.57
+            -10.88    -10.73    -10.59    -10.47    -10.35
+              4.42      5.33      5.27      5.17      5.07
+              0.00     -0.68      0.00     -0.61      0.00
+          Ns  261   Ns  262   Ns  263   Ns  264   Ns  265
+              8.26      6.66      8.12      6.51      7.71
+              0.70      0.75      1.16      1.42      1.66
+            -10.50    -10.32    -10.08     -9.96     -9.68
+              5.29      5.45      5.24      5.13      4.99
+             -0.68     -1.69     -0.73     -1.38     -0.66
+          Sg  260   Sg  261   Sg  262   Sg  263   Sg  264
+              8.04      6.61      7.71      6.25      7.48
+              2.73      2.96      3.23      3.35      3.62
+             -9.90     -9.71     -9.60     -9.40     -9.21
+              5.38      5.29      5.20      5.06      4.93
+              0.00     -0.61      0.00     -0.68      0.00
+          Ha  259   Ha  260   Ha  261   Ha  262   Ha  263
+              7.88      6.39      7.44      6.13      7.21
+              1.64      1.98      2.13      2.36      2.57
+             -9.62     -9.50     -9.22     -9.05     -8.83
+              5.37      5.19      5.13      4.94      4.84
+             -0.75     -1.28     -0.75     -1.30     -0.73
+
+ benutzter Q-Wert  -208.205 MeV    effektiver Q-Wert  -208.205 MeV
+1     ENERGY   283.608     0.000
+
+Extra-Push Parameter: E_push =   43.09 MeV   x_eq_m= 0.835   xth= 0.720   Apush=15.000   E_ch=  14.383   xcn= 0.930   x_eq_eff= 0.750
+
+
+E_lab = 283.608 MeV    E* =  13.795 MeV   nicht gerechnet, SIGFUS kleiner als 1 nb
+
+
+1     ENERGY   286.163     0.000
+
+
+E_lab = 286.163 MeV    E* =  15.795 MeV   nicht gerechnet, SIGFUS kleiner als 1 nb
+
+
+1     ENERGY   287.951     0.000
+
+
+E_lab = 287.951 MeV    E* =  17.195 MeV   nicht gerechnet, SIGFUS kleiner als 1 nb
+
+
+
+
+
+ Ende HIVAP 

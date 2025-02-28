@@ -1,0 +1,8 @@
+Reaction:   ZT= 13    AT  27    ZP  2    AP   4
+Energies in MeV, cross sections in mb,  angular momenta in hbar
+SIGSUM = sum of residual nucleus cross sections.  SIGRAT = SIGSUM/SIGFUS
+
+  ELAB E*_CN    SIGFUS    SIGSUM    SIGRAT   SIGEVAP    SIGFIS  LCRIT  sig_27He     sig_P  sig_28He     sig_P  sig_29He     sig_P  sig_30Li     sig_P  sig_31Li     sig_P  sig_26Si  sig_27Si  sig_28Si  sig_29Si  sig_30Si  sig_25Al  sig_26Al  sig_27Al  sig_28Al  sig_29Al  sig_24Mg  sig_25Mg  sig_26Mg  sig_27Mg  sig_28Mg  sig_23Na  sig_24Na  sig_25Na  sig_26Na  sig_27Na
+  36.5  41.5 1.250e+03 1.249e+03 9.994e-01 1.249e+03 0.000e+00   14.0  0.00e+00  0.00e+00  8.98e+00  2.98e+01  0.00e+00  0.00e+00  0.00e+00  1.34e+02  6.77e+02  9.47e+01  2.47e-03  2.52e+01  5.62e+01  1.43e+01  5.55e+01  0.00e+00  7.45e+00  1.34e+02  0.00e+00  5.55e-02  1.21e+01  0.00e+00  3.91e-03  0.00e+00  0.00e+00
+  36.5  41.5 1.250e+03 1.249e+03 9.994e-01 1.249e+03 0.000e+00   14.0  0.00e+00  0.00e+00  8.98e+00  2.98e+01  0.00e+00  0.00e+00  0.00e+00  1.34e+02  6.77e+02  9.47e+01  2.47e-03  2.52e+01  5.62e+01  1.43e+01  5.55e+01  0.00e+00  7.45e+00  1.34e+02  0.00e+00  5.55e-02  1.21e+01  0.00e+00  3.91e-03  0.00e+00  0.00e+00
+  36.5  41.5 1.250e+03 1.249e+03 9.994e-01 1.249e+03 0.000e+00   14.0  0.00e+00  0.00e+00  8.98e+00  2.98e+01  0.00e+00  0.00e+00  0.00e+00  1.34e+02  6.77e+02  9.47e+01  2.47e-03  2.52e+01  5.62e+01  1.43e+01  5.55e+01  0.00e+00  7.45e+00  1.34e+02  0.00e+00  5.55e-02  1.21e+01  0.00e+00  3.91e-03  0.00e+00  0.00e+00

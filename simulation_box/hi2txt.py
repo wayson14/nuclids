@@ -303,11 +303,11 @@ def main():
                     w = 0
                     while w < nw:
                         # if w % 2 == 0:  # even indexes
-                        print(words[w][0:3])
+                        # print(words[w][0:3])
                         if words[w][0].isdigit():
                             # if true, then Z>109, so needed special treatment
                             s1 = words[w]
-                            print(f"s1: {s1}")
+                            # print(f"s1: {s1}")
                             Nuc[nrn] = s1  # "".join(s1.split())
                             nrn += 1
                             w += 1
@@ -316,8 +316,8 @@ def main():
                             Nuc[nrn] = "".join(s1.split())
                             nrn += 1
                             w += 2
-                        print(f"Nuc[nrn]:{Nuc[nrn]}")
-                    print(Nuc)
+                        # print(f"Nuc[nrn]:{Nuc[nrn]}")
+                    # print(Nuc)
                     # else:
                     # pass
                     ################
@@ -407,29 +407,31 @@ def main():
                 # if args.verbose: print (str);
                 words = str.split()
                 nrw = len(words)
-                if args.verbose:
-                    print("len(words) = ", nrw)
+                # if args.verbose:
+                #     print("len(words) = ", nrw)
                 if nrw - 1 == nri:  # no space between mass number and element nr
-                    print("variant 1")
+                    # print("variant 1")
                     for iw in range(0, nrw):  # Extract the nuclide names
                         # for w in words: # Extract the nuclide names
-                        if args.verbose:
-                            print("iw = ", iw)
-                            print("words[", iw, "]", words[iw])
+                        # if args.verbose:
+                        #     print("iw = ", iw)
+                        #     print("words[", iw, "]", words[iw])
                         if iw == 0:
                             estar = words[iw]
                             # This word should be "E*/MeV"
                         else:
+                            if words[iw][-2:] == "Ha":
+                                words[iw] = words[iw][:-2] + "Db"
+                            if words[iw][-2:] == "Ns":
+                                words[iw][-2:] = words[iw][:-2] + "Bh"
                             s1 = words[iw]
                             Nuc[nuc] = "".join(s1.split())
                             # if args.verbose:
                             #  print("Nuc[", nuc, "] = ", Nuc[nuc]);
                             nuc = nuc + 1
                             # if args.verbose: print("nuc = ", nuc)
-                        print(words[iw][-2:-1])
-                        if words[iw][-2:-1] == "Ns":
+                        # print(words[iw][-2:-1])
 
-                            words[iw][-2:-1] = "Bh"
                 else:
                     print("variant 2")
                     for iw in range(0, nrw, 1):  # Extract the nuclide names
@@ -438,7 +440,11 @@ def main():
                             print("iw = ", iw)
                             print("words[", iw, "]", words[iw])
                             print(words[iw][-2:])
-
+                        if words[iw].isdigit():
+                            continue
+                        else:
+                            if len(words[iw]) == 1:  # one letter element name
+                                words[iw] = words[iw - 1] + words[iw]
                         # Bohrium adjustment
                         if words[iw][-2:] == "Ns":
                             words[iw] = words[iw][:-2] + "Bh"
@@ -450,17 +456,21 @@ def main():
                             # This word should be "E*/MeV"
                         else:  # Here are problems with numeric nuclides (above 109Z)
                             # s1 = words[iw - 1] + words[iw]
-
+                            if words[iw][-2:] == "Ha":
+                                words[iw] = words[iw][:-2] + "Db"
+                            if words[iw][-2:] == "Ns":
+                                words[iw][-2:] = (
+                                    words[iw][:-2] + "Bh"
+                                )  # Bohrium incident
                             symbol = re.findall("[A-Z]{1}[a-z]{1}|[A-Z]{1}", words[iw])
                             if len(symbol) == 0:
                                 element_z = int(words[iw][-4:-1])
                                 translated_symbol = pt.elements[element_z]
-                                print(translated_symbol)
+                                # print(translated_symbol)
                                 ts = translated_symbol.symbol
                                 isotope_a = int(words[iw][0:3])
                                 words[iw] = f"{isotope_a}" + ts
-                            if words[iw][-2:-1] == "Ns":
-                                words[iw][-2:-1] = "Bh"  # Bohrium incident
+
                             s1 = words[iw] + " "
                             Nuc[nuc] = "".join(s1.split())
                             # print(f"{Nuc[nuc]}")
@@ -523,8 +533,8 @@ def main():
     nrn = nnr + 1
     nre = enr
 
-    if args.verbose:
-        print("nrz =", nrz, "nrn =", nrn, "nre =", nre)
+    # if args.verbose:
+    #     print("nrz =", nrz, "nrn =", nrn, "nre =", nre)
 
     # Calculate SIGSUM and SIGSUM/SIGFUS:
 
@@ -565,7 +575,7 @@ def main():
     print("{:>7}".format(" LCRIT"), end="", file=args.output)
     for n in range(0, nuc):
         s1 = "sig_" + Nuc[n]
-        print(f"s:{s1}, Nuc[n]:{Nuc[n]}")
+        # print(f"s:{s1}, Nuc[n]:{Nuc[n]}")
         nucstr = "".join(s1.split())
         print("{:>10}".format(nucstr), end="", file=args.output)
         # print ("{0:>5}{1:>5}".format("sig_",Nuc[n]),

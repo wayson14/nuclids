@@ -3,7 +3,7 @@ instrukcje.txt
 *hivapein.dat*
 # results
 *.csv
-
+results/plots/
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]

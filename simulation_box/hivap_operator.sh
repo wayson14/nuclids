@@ -15,21 +15,29 @@ if ! [[ "$n" =~ ^[0-9]+$ ]]; then
 fi
 
 # Iterate n times, appending n value to output.txt
-mkdir ../hivapergs 
+mkdir ../hivapergs
+mkdir ../hivapeins
+mkdir ../h2txt_outputs 
 mkdir ../results
+mkdir ../results/plots
 whole_start_time=$(date +%s)
 for (( i=n; i<s+1; i++ )); do
     start_time=$(date +%s)
     echo "================================================================================="
     echo "Processing relocde ${i}..."
-    cp "../hivapein.dat.${i}" ./hivapein.dat && echo "Copied hivapein.dat.${i} into simulation_box"
+    cp "../hivapein.dat.${i}" "../hivapeins/hivapein_${i}.dat" && echo "Copied hivapein.dat.${i} into hivapeins"
+    mv "../hivapein.dat.${i}" ./hivapein.dat && echo "Movies hivapein.dat.${i} into simulation_box"
     ./hivapn || echo "^^^ Error in hivapn ^^^"
     cp hivaperg.dat "../hivapergs/hivaperg_${i}.dat" && echo "Copied hivaperg.dat.${i} into hivapergs"
     python hi2txt.py -v hivaperg.dat "output_${i}.dat" || echo "^^^ Error in hi2txt.py ^^^"
     mv "output_${i}.dat" "../results/output_${i}.dat" && echo "Copied output_${i}.dat into results"
     cd ../results/
-    python data_plotter.py "output_${i}.dat" "plot_${i}.png" && echo "Processed output_${i}.dat into and plotted plot_${i}.png"
+    python data_plotter.py "output_${i}.dat" "./plots/plot_${i}.png" && echo "Processed output_${i}.dat into and plotted plot_${i}.png"
+    mv "output_${i}.dat" ../h2txt_outputs/
     cd ../simulation_box
+    rm dummi*
+    rm hivapein.dat
+    rm hivaperg.dat
     end_time=$(date +%s)
     elapsed_time=$(( end_time - start_time ))
     echo "Execution time: $elapsed_time seconds"

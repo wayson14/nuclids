@@ -3,6 +3,7 @@ from bs4 import BeautifulSoup as bs
 import json
 import csv
 import periodictable as pt
+import sys
 
 # TODO: (possibilities)
 # -plotting charts, nice interface to interact
@@ -212,5 +213,6 @@ if __name__ == "__main__":
     # r_table.save_results_table_to_csv()
 
     # INTEGRATION TESTING
-    scrape_all_evaporation_data_to_csv(1, 305)
+    scrape_all_evaporation_data_to_csv(int(sys.argv[1]), int(sys.argv[2]))
+    # scrape_all_evaporation_data_to_csv(1, 305)
     # scrape_all_evaporation_data_to_csv(1, 2)
