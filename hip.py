@@ -140,14 +140,14 @@ def experiment_generator(
         # OVERRIDE DETERMINING CHANNEL FROM FILE
         experiment.channel_n = max_channel_n
         experiment.channel_p = max_channel_p
-        print(f"CH N: {experiment.channel_n}")
+        # print(f"CH N: {experiment.channel_n}")
 
     for key in experiment_dict.keys():
         if (int(key) >= start_relcode) and (int(key) <= stop_relcode):
             experiment_obj = experiment_dict[key]
             experiment_obj.generate_hivapein()
         else:
-            break
+            continue
     return
 
 
