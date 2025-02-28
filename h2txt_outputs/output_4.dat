@@ -2,7 +2,7 @@ Reaction:   ZT= 82    AT 208    ZP 20    AP  48
 Energies in MeV, cross sections in mb,  angular momenta in hbar
 SIGSUM = sum of residual nucleus cross sections.  SIGRAT = SIGSUM/SIGFUS
 
-  ELAB E*_CN    SIGFUS    SIGSUM    SIGRAT   SIGEVAP    SIGFIS  LCRIT sig_255No sig_256No sig_254Md sig_255Md
- 213.5  19.7 2.684e+00 2.964e-04 1.104e-04 2.965e-04 2.681e+00    9.0  2.95e-04  0.00e+00  2.69e-08  1.35e-06
- 216.7  22.3 9.820e+00 7.747e-05 7.889e-06 7.745e-05 9.807e+00   22.0  7.48e-05  0.00e+00  7.30e-07  1.94e-06
- 219.4  24.5 2.201e+01 2.275e-05 1.034e-06 2.274e-05 2.198e+01   28.0  1.76e-05  0.00e+00  3.98e-06  1.17e-06
+  ELAB E*_CN    SIGFUS    SIGSUM    SIGRAT   SIGEVAP    SIGFIS  LCRIT sig_254No sig_255No sig_256No sig_253Md sig_254Md sig_255Md sig_252Fm sig_253Fm sig_254Fm
+ 213.5  19.7 2.684e+00 3.428e-03 1.277e-03 3.427e-03 2.681e+00    9.0  3.13e-03  2.95e-04  0.00e+00  0.00e+00  2.69e-08  1.35e-06  1.53e-06  0.00e+00  1.28e-19
+ 216.7  22.3 9.820e+00 7.502e-03 7.639e-04 7.500e-03 9.813e+00   22.0  7.42e-03  7.48e-05  0.00e+00  0.00e+00  7.30e-07  1.94e-06  4.13e-06  0.00e+00  2.00e-14
+ 219.4  24.5 2.201e+01 4.997e-03 2.270e-04 4.993e-03 2.201e+01   28.0  4.97e-03  1.76e-05  0.00e+00  1.95e-09  3.98e-06  1.17e-06  4.33e-06  0.00e+00  6.42e-13

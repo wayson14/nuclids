@@ -433,7 +433,8 @@ def main():
                         # print(words[iw][-2:-1])
 
                 else:
-                    print("variant 2")
+                    if args.verbose:
+                        print("variant 2")
                     for iw in range(0, nrw, 1):  # Extract the nuclide names
                         # for w in words: # Extract the nuclide names
                         if args.verbose:
@@ -487,7 +488,8 @@ def main():
                 #     pass
                 else:
                     nrw = len(words)
-                    print(f"{nrw}, {words}")
+                    if args.verbose:
+                        print(f"{nrw}, {words}")
                     for iw in range(0, nrw):  # Extract E* and cross sections
                         # if args.verbose: print ("iw=", iw);
                         if iw == 0:  # This is the first column with the E* value
@@ -510,8 +512,8 @@ def main():
                                 continue
 
                             sigres[znr][nnr][enr] = float(words[iw])
-
-                            print(sigres[znr][nnr][enr])
+                            if args.verbose:
+                                print(sigres[znr][nnr][enr])
                             #######################
                             # except ValueError:
                             #     print(words[iw])

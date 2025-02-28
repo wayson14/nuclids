@@ -11,7 +11,7 @@ stop_relcode="$3"
 max_n="$4"
 max_p="$5"
 
-#python scraper.py "$start_relcode" "$stop_relcode"
-python hip.py "$source" "$start_relcode" "$stop_relcode" "$max_n" "$max_p"
+python scraper.py "$start_relcode" "$stop_relcode"
+python hip.py "$source" "$start_relcode" "$stop_relcode" "$max_n" "$max_p" 
 cd simulation_box
 ./hivap_operator.sh "$start_relcode" "$stop_relcode"

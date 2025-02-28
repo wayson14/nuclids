@@ -146,6 +146,7 @@ def experiment_generator(
         if (int(key) >= start_relcode) and (int(key) <= stop_relcode):
             experiment_obj = experiment_dict[key]
             experiment_obj.generate_hivapein()
+            print("WYGENERUJE SIE")
         else:
             continue
     return

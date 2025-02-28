@@ -1,0 +1,66 @@
+          Programm HIVAP,  Autor  W.Reisdorf   Version fuer "rzri6f" vom  7. 6. 1994
+
+           Bearbeitung F.P.Heßberger
+           
+(64)Ni+(209)Bi -> (273)Rg                                               
+           
+
+ Unterprogramm SEPENF
+ Q-Wert  -228.053 MeV
+ Massen aus der Datei "mlz.dat" 
+
+         Exp. Schaleneffekte,  SHELL0=   -1.20
+          111/271   111/272   111/273
+             -4.40     -4.70     -4.77
+          110/270   110/271   110/272
+             -4.57     -4.68     -4.80
+          Mt  269   Mt  270   Mt  271
+             -4.73     -4.67     -4.86
+
+           BARFAC=   1.000      BAR0=   0.000
+
+          Separationsenergien (BN,BP,BA) und Spaltbarrieren
+          111/271   111/272   111/273
+              8.22      6.75      8.15
+              0.26      0.46      0.61
+            -11.55    -11.20    -10.90
+              4.48      4.79      4.87
+             -0.67     -1.33     -0.67
+          110/270   110/271   110/272
+              8.23      6.80      8.00
+              1.98      2.05      2.38
+            -11.12    -10.87    -10.76
+              4.74      4.86      4.99
+              0.00     -0.66      0.00
+          Mt  269   Mt  270   Mt  271
+              7.85      6.73      7.68
+              0.75      1.14      1.30
+            -10.53    -10.18     -9.91
+              4.98      4.94      5.13
+             -0.81     -1.19     -0.74
+
+ benutzter Q-Wert  -228.053 MeV    effektiver Q-Wert  -228.053 MeV
+1     ENERGY   312.056     0.000
+
+Extra-Push Parameter: E_push =   67.61 MeV   x_eq_m= 0.862   xth= 0.720   Apush=15.000   E_ch=  14.852   xcn= 0.946   x_eq_eff= 0.786
+
+
+E_lab = 312.056 MeV    E* =  10.847 MeV   nicht gerechnet, SIGFUS kleiner als 1 nb
+
+
+1     ENERGY   314.015     0.000
+
+
+E_lab = 314.015 MeV    E* =  12.347 MeV   nicht gerechnet, SIGFUS kleiner als 1 nb
+
+
+1     ENERGY   315.975     0.000
+
+
+E_lab = 315.975 MeV    E* =  13.847 MeV   nicht gerechnet, SIGFUS kleiner als 1 nb
+
+
+
+
+
+ Ende HIVAP 

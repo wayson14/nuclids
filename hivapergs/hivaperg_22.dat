@@ -1,0 +1,78 @@
+          Programm HIVAP,  Autor  W.Reisdorf   Version fuer "rzri6f" vom  7. 6. 1994
+
+           Bearbeitung F.P.Heßberger
+           
+(54)Cr+(209)Bi -> (263)Bh                                               
+           
+
+ Unterprogramm SEPENF
+ Q-Wert  -189.690 MeV
+ Massen aus der Datei "mlz.dat" 
+
+         Exp. Schaleneffekte,  SHELL0=   -1.20
+          Ns  261   Ns  262   Ns  263
+             -4.93     -5.09     -4.86
+          Sg  260   Sg  261   Sg  262
+             -4.94     -4.84     -4.74
+          Ha  259   Ha  260   Ha  261
+             -4.75     -4.54     -4.44
+
+           BARFAC=   1.000      BAR0=   0.000
+
+          Separationsenergien (BN,BP,BA) und Spaltbarrieren
+          Ns  261   Ns  262   Ns  263
+              8.26      6.66      8.12
+              0.70      0.75      1.16
+            -10.50    -10.32    -10.08
+              5.29      5.45      5.24
+             -0.68     -1.69     -0.73
+          Sg  260   Sg  261   Sg  262
+              8.04      6.61      7.71
+              2.73      2.96      3.23
+             -9.90     -9.71     -9.60
+              5.38      5.29      5.20
+              0.00     -0.61      0.00
+          Ha  259   Ha  260   Ha  261
+              7.88      6.39      7.44
+              1.64      1.98      2.13
+             -9.62     -9.50     -9.22
+              5.37      5.19      5.13
+             -0.75     -1.28     -0.75
+
+ benutzter Q-Wert  -189.690 MeV    effektiver Q-Wert  -189.690 MeV
+1     ENERGY   258.986     0.000
+
+Extra-Push Parameter: E_push =   25.08 MeV   x_eq_m= 0.809   xth= 0.720   Apush=15.000   E_ch=  13.939   xcn= 0.912   x_eq_eff= 0.718
+
+
+E_lab = 258.986 MeV    E* =  16.120 MeV   nicht gerechnet, SIGFUS kleiner als 1 nb
+
+
+1     ENERGY   264.384     0.000
+
+
+E_lab = 264.384 MeV    E* =  20.410 MeV   nicht gerechnet, SIGFUS kleiner als 1 nb
+
+
+1     ENERGY   258.973     0.000
+
+
+E_lab = 258.973 MeV    E* =  16.110 MeV   nicht gerechnet, SIGFUS kleiner als 1 nb
+
+
+1     ENERGY   264.384     0.000
+
+
+E_lab = 264.384 MeV    E* =  20.410 MeV   nicht gerechnet, SIGFUS kleiner als 1 nb
+
+
+1     ENERGY   269.292     0.000
+
+
+E_lab = 269.292 MeV    E* =  24.310 MeV   nicht gerechnet, SIGFUS kleiner als 1 nb
+
+
+
+
+
+ Ende HIVAP 

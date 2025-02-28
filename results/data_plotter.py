@@ -132,14 +132,13 @@ def plot_experiment(
     ax.yaxis.set_minor_locator(
         ticker.LogLocator(base=10.0, subs=np.arange(1, 10) * 0.1)
     )
+    ax.yaxis.set_major_locator(ticker.LogLocator(base=10.0, numticks=10))
     plt.grid()
     plt.tight_layout()
     box = ax.get_position()
     ax.set_position([box.x0, box.y0, box.width * 0.8, box.height])
     ax.legend(loc="center left", bbox_to_anchor=(1.025, 0.5), title="EvR channels")
-    ax.yaxis.set_minor_locator(
-        ticker.LogLocator(base=10.0, subs=np.arange(1, 10) * 0.1)
-    )
+
     plt.savefig(output_filename)
     # plt.show()
 
